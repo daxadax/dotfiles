@@ -8,9 +8,6 @@
 ## aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-#alias biggest_files
-
-
 
 ## prompt
 PS1='[\u@\h \W]\$ '
