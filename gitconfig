@@ -3,3 +3,5 @@
 	email = d.dax@email.com
 [credential]
 	helper = cache --timeout=10800
+[push]
+	default = simple
