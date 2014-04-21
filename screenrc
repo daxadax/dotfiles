@@ -1,0 +1,3 @@
+startup_message off
+caption always "%{= kw}%-w%{= w} %t"
+vbell off

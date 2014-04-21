@@ -1,0 +1,5 @@
+[user]
+	name = Dax
+	email = d.dax@email.com
+[credential]
+	helper = cache --timeout=10800
