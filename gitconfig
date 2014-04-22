@@ -1,7 +1,11 @@
 [user]
 	name = Dax
 	email = d.dax@email.com
+[color]	
+	ui = true
 [credential]
 	helper = cache --timeout=10800
 [push]
 	default = simple
+[alias]
+     nuke = !sh -c 'git branch -d $1 && git push origin :$1' -
