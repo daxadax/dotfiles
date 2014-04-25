@@ -13,6 +13,7 @@ alias grep='grep --color=auto'
 
 export EDITOR=vim
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export TERM="xterm-256color"
 
 ## Determine if the current git directory has uncommited changes
 
