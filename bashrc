@@ -10,6 +10,7 @@ alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.
 alias gst='git status'
 alias ga='git add'
 alias gc='git commit'
+alias gco='git checkout'
 alias gba='git branch -a'
 alias gd='git diff'
 alias stash='git stash'
