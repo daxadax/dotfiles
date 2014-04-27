@@ -5,7 +5,8 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
-
+alias keymap="xmodmap -pke"
+alias sublime="/usr/bin/sublime_text_3/sublime_text"
  ### git aliases
 alias gst='git status'
 alias ga='git add'
