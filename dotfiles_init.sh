@@ -13,7 +13,7 @@ dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
-files="bash_profile gitconfig i3status.conf screenrc bashrc i3config profile xinitrc"   
+files="bash_profile gitconfig i3status.conf screenrc bashrc i3config profile xinitrc vimrc"   
 
 ####
 
