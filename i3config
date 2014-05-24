@@ -9,7 +9,10 @@ set $mod Mod1
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 ### ENERGY SETTINGS ###
-exec backlight -set 50
+exec xbacklight -set 50
+
+### DEFAULT VOLUME ###
+exec amixer set Master 20
 
 ### WINDOW PLACEMENT ###
 assign [class="Sublime_text"] 2
@@ -26,9 +29,20 @@ for_window [class="Chromium"]       border none
 for_window [class="Sublime_text"]   border none
 for_window [class="Gnome-terminal"] border none
 
-### KEYBINDINGS ###
+### USER KEYBINDINGS ###
 
-# start a terminal
+#volume
+bindsym XF86AudioMute exec amixer set Master 0
+bindsym XF86AudioRaiseVolume exec amixer set Master 5+
+bindsym XF86AudioLowerVolume exec amixer set Master 5-
+
+#brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+### DEFAULT KEYBINDINGS ###
+
+#start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -148,7 +162,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-###START i3STATUS###
+##START i3STATUS###
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
