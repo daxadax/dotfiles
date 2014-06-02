@@ -18,9 +18,10 @@ alias gba='git branch -a'
 alias gd='git diff'
 alias stash='git stash'
 alias pop='git stash pop'
+alias gl='git pull'
+alias gp='git push'
 
 ## export
-
 export EDITOR=vim
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export TERM="xterm-256color"
