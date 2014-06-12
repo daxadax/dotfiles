@@ -15,7 +15,15 @@ fi
 udiskie &
 
 # Source bashrc
-. ~/.bashrc 
+. ~/.bashrc &
+
+# Add key for ssh-agent
+exec eval ssh-agent -s &
+exec ssh-add ~/.ssh/neo & 
+exec ssh-add ~/.ssh/id_rsa.pub &
+
+# Start mysql server
+exec mysql start &
 
 # Start desktop environment
 exec i3 -c ~/.i3config
