@@ -8,6 +8,7 @@ alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.
 alias keymap="xmodmap -pke"
 alias sublime="/usr/bin/sublime_text_3/sublime_text"
 alias unmount_all="udiskie-umount -a"
+alias connect_to_neo="ssh -D 1337 -vN dd@office.neopoly.de"
 
  ### git aliases
 alias gst='git status'
