@@ -1,11 +1,20 @@
 startup_message off
 defscrollback 5000
 vbell off
-shelltitle "$ |bash" #auto-name windows. 
+shelltitle "$ |not set" #auto-name windows. 
 
 # KEY BINDINGS
 bindkey ^[[1;5D prev
 bindkey ^[[1;5C next
 
-hardstatus alwayslastline
-hardstatus string "%{= w} %-w[%n %t]%+W"
+
+# because this is so fucking obtuse...
+# %-w:      display previous windows
+# %{+b w}:  bold white
+# [%n]:     display window number in brackets
+# %t:       display title
+# %+w       display consequent windows
+
+
+hardstatus alwayslastline "%{=}%-w%{+b w}[%n] %t%{-b w}%+w %=%"
+#hardstatus string "%{= w} %-w[%n %t]%+W"
