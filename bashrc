@@ -1,16 +1,25 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-## aliases
+## system aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 alias keymap="xmodmap -pke"
-alias sublime="/usr/bin/sublime_text_3/sublime_text"
 alias unmount_all="udiskie-umount -a"
-alias connect_to_neo="ssh -D 1337 -vN dd@office.neopoly.de"
 
- ### git aliases
+function sublime {
+  i3-msg workspace $(($(i3-msg -t get_workspaces | tr , '\n' | grep '"num":' | cut -d : -f 2 | sort -rn | head -1) + 1))
+  /usr/bin/sublime_text_3/sublime_text $1
+}
+
+## connection aliases
+alias connect_to_mysql='sudo systemctl start mysqld.service'
+alias connect_to_neo="ssh -D 1337 -vN dd@office.neopoly.de"
+alias connect_to_quotes='cd ~/programming/quotes/quotes_app/ && shotgun -p 2300 config.ru'
+alias connect_to_tarot='cd ~/programming/tarot/tarot_app/ && shotgun -p 2301 config.ru'
+
+### git aliases
 alias gst='git status'
 alias ga='git add'
 alias gc='git commit'
