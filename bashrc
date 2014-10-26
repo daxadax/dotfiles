@@ -16,8 +16,8 @@ function sublime {
 ## connection aliases
 alias connect_to_mysql='sudo systemctl start mysqld.service'
 alias connect_to_neo="ssh -D 1337 -vN dd@office.neopoly.de"
-alias connect_to_quotes='cd ~/programming/quotes/quotes_app/ && shotgun -p 2300 config.ru'
-alias connect_to_tarot='cd ~/programming/tarot/tarot_app/ && shotgun -p 2301 config.ru'
+alias connect_to_quotes='cd ~/programming/quotes/ && sublime . && cd quotes_app && shotgun -p 2300 config.ru'
+alias connect_to_tarot='cd ~/programming/tarot/tarot_app/ && sublime . && shotgun -p 2301 config.ru'
 
 ### git aliases
 alias gst='git status'
@@ -30,6 +30,11 @@ alias stash='git stash'
 alias pop='git stash pop'
 alias gl='git pull'
 alias gp='git push'
+
+### shortcuts
+alias r='bundle exec ruby -Ilib:spec:test'
+alias block='echo befc523d-8815-4245-be01-81ecd2a8bd99'
+alias pidgin='pidgin &'
 
 ## export
 export EDITOR=vim
