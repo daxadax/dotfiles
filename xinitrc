@@ -18,12 +18,12 @@ udiskie &
 . ~/.bashrc &
 
 # Add key for ssh-agent
-eval ssh-agent -s &
+eval $(ssh-agent) &
 ssh-add ~/.ssh/neo & 
 ssh-add ~/.ssh/id_rsa.pub &
 
 # Start mysql server
-systemctl start mysqld.service &
+connect_to_mysql &
 
 # Start desktop environment
 exec i3 -c ~/.i3config
