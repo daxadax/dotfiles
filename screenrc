@@ -1,12 +1,14 @@
 startup_message off
 defscrollback 5000
 vbell off
-shelltitle "$ |not set" #auto-name windows. 
+#shelltitle "$ |not set" #auto-name windows. 
 
 # KEY BINDINGS
 bindkey ^[[1;6D prev
 bindkey ^[[1;6C next
 
+# For RVM
+shell -${SHELL}
 
 # because this is so fucking obtuse...
 # %-w:      display previous windows

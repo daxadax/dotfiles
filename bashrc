@@ -34,12 +34,18 @@ alias gp='git push'
 ### shortcuts
 alias r='bundle exec ruby -Ilib:spec:test'
 alias block='echo befc523d-8815-4245-be01-81ecd2a8bd99'
+alias screen='screen && /bin/bash --login'
 alias pidgin='pidgin &'
 
 ## export
 export EDITOR=vim
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export TERM="xterm-256color"
+
+# Determine if the current git directory has uncommited changes
+
+function git_is_dirty {
+  git diff --quiet HEAD > /dev/null 2>&1
+  return $?
+}
 
 ## Determine the current git-branch if in a git directory
 
@@ -47,6 +53,28 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\<\1\> /'
 }
 
+# Name screen tabs whatever the current directory is
+
+function set_screen_title {
+  if [[ "$TERM" == screen* ]]; then
+    local TITLE="$PWD"
+    case $TITLE in
+      $HOME) TITLE="~";;
+      $HOME/*) TITLE="$(basename $TITLE)";;
+    esac
+    if [[ git_is_dirty == 1 ]];
+    then
+      printf '\ek%s\e\\' "!! $TITLE"
+    fi
+
+    printf '\ek%s\e\\' "$TITLE"
+
+  #PROMPT_COMMAND="screen_set_window_title; $PROMPT_COMMAND"
+  fi
+}
+
 ## Export the prompt
+
+export PROMPT_COMMAND=set_screen_title
 
 PS1='\[\033[0;37m\][\[\e[0;37m\]\[\e[0;37m\]\[\e[0;37m\]\[\e[0;37m\]\w\[\e[0;37m\]]\[\e[0;37m\]\[\033[1;31m\]$(parse_git_branch)\[\033[1;31m\]\[\e[0;37m\]'
