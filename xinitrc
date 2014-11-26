@@ -17,11 +17,6 @@ udiskie &
 # Source bashrc
 . ~/.bashrc &
 
-# Add key for ssh-agent
-eval $(ssh-agent) &
-ssh-add ~/.ssh/neo & 
-ssh-add ~/.ssh/id_rsa.pub &
-
 # Start mysql server
 connect_to_mysql &
 
