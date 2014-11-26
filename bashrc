@@ -8,11 +8,6 @@ alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.
 alias keymap="xmodmap -pke"
 alias unmount_all="udiskie-umount -a"
 
-function sublime {
-  i3-msg workspace $(($(i3-msg -t get_workspaces | tr , '\n' | grep '"num":' | cut -d : -f 2 | sort -rn | head -1) + 1))
-  /usr/bin/sublime_text_3/sublime_text $1
-}
-
 ## connection aliases
 alias connect_to_mysql='sudo systemctl start mysqld.service'
 alias connect_to_neo="ssh -D 1337 -vN dd@office.neopoly.de"
