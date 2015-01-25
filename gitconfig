@@ -2,11 +2,11 @@
 name  = Dax
 email = d.dax@email.com
 [color]	
-ui    = true
+ui = true
 [credential]
 helper = cache --timeout=10800
 [push]
 default = simple
 [alias]
-nuke  = !sh -c 'git branch -d $1 && git push origin :$1' -
-
+nuke = !sh -c 'git branch -d $1 && git push origin :$1' -
+prettylog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white) - %an%C(reset)' --all

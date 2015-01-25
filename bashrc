@@ -25,6 +25,7 @@ alias stash='git stash'
 alias pop='git stash pop'
 alias gl='git pull'
 alias gp='git push'
+alias gg='git prettylog'
 
 ### shortcuts
 alias r='bundle exec ruby -Ilib:spec:test'
