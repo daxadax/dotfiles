@@ -10,6 +10,7 @@ alias grep='grep --color=auto'
 alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 alias keymap="xmodmap -pke"
 alias unmount_all="udiskie-umount -a"
+alias diskusage=determine_disk_usage
 
 ## connection aliases
 alias connect_to_mysql='sudo systemctl start mysqld.service'
@@ -38,6 +39,18 @@ alias pidgin='pidgin &'
 
 ## export
 export EDITOR=vim
+
+# Determine disk useage through a modified `du` command
+
+function determine_disk_usage {
+  if [[ "$1" !=  "" ]]; then
+    DIR="$1"
+  else
+    DIR="/*"
+  fi
+
+  sudo du -h --max-depth=1 $DIR | sort -h
+}
 
 # Determine if the current git directory has uncommited changes
 
