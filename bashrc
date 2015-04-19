@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# If an unknown application is called, search pkgfile for where it can be found
+source /usr/share/doc/pkgfile/command-not-found.bash
+
 ## system aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
