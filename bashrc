@@ -15,6 +15,8 @@ alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.
 alias keymap="xmodmap -pke"
 alias unmount_all="udiskie-umount -a"
 alias diskusage=determine_disk_usage
+alias wireless_down='sudo ifconfig wlp1s0 down'
+alias wireless_up='sudo ifconfig wlp1s0 up'
 
 ## connection aliases
 alias connect_to_mysql='sudo systemctl start mysqld.service'
