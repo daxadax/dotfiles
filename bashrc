@@ -69,12 +69,6 @@ function determine_disk_usage {
   sudo du -h --max-depth=1 $DIR | sort -h
 }
 
-# Determine if the current git directory has uncommited changes
-
-function git_is_dirty {
-  git diff --quiet HEAD > /dev/null 2>&1
-  return $?
-}
 
 ## Determine the current git-branch if in a git directory
 
@@ -91,14 +85,8 @@ function set_screen_title {
       $HOME) TITLE="~";;
       $HOME/*) TITLE="$(basename $TITLE)";;
     esac
-    if [[ git_is_dirty == 1 ]];
-    then
-      printf '\ek%s\e\\' "!! $TITLE"
-    fi
 
     printf '\ek%s\e\\' "$TITLE"
-
-  #PROMPT_COMMAND="screen_set_window_title; $PROMPT_COMMAND"
   fi
 }
 
