@@ -1,16 +1,19 @@
-set expandtab
-set tabstop=2
-set number
-
-autocmd BufWritePre *.rb :%s/\s\+$//e
 syntax enable
 
-let g:solarized_termcolors=256
+" use vim settings rather than vi
+set nocompatible
 
-"          mappings          "
+" set size
+set textwidth=80
 
-inoremap 225 <c-n> mapmode-i
+" expand tabs to spaces, default two
+set expandtab
+set tabstop=2
+
+" show line numbers
+set number  
 
 "         shortcuts          "
 
-cnoremap sudow w !sudo tee % >/dev/null
+" show matching brackets
+set showmatch
