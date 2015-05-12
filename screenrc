@@ -1,7 +1,6 @@
 startup_message off
 defscrollback 5000
 vbell off
-#shelltitle "$ |not set" #auto-name windows. 
 
 # KEY BINDINGS
 bindkey ^[[1;6D prev
@@ -17,6 +16,4 @@ shell -${SHELL}
 # %t:       display title
 # %+w       display consequent windows
 
-
 hardstatus alwayslastline "%{=}%-w%{+b w}[%n] %t%{-b w}%+w %=%"
-#hardstatus string "%{= w} %-w[%n %t]%+W"
