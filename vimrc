@@ -13,7 +13,8 @@ set tabstop=2
 " show line numbers
 set number  
 
-"         shortcuts          "
+" enable fuzzy search plugin
+set runtimepath^=~/.vim/plugins/ctrlp.vim
 
 " show matching brackets
 set showmatch
