@@ -26,7 +26,6 @@ exec xdotool mousemove 1500 1200
 
 # the last window manipulated is the one that is present on startup
 for_window [class="Chromium"]       border none
-for_window [class="Atom"]           border none
 for_window [class="Gnome-terminal"] border none
 
 ### USER KEYBINDINGS ###
