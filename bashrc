@@ -4,6 +4,10 @@
 # If an unknown application is called, search pkgfile for where it can be found
 source /usr/share/doc/pkgfile/command-not-found.bash
 
+## reminder helpers
+alias clear_reminders='echo "nothing to do" > ~/reminders'
+alias remind_me=add_reminder
+
 ## system aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -39,6 +43,16 @@ alias pidgin='pidgin &'
 
 ## export
 export EDITOR=vim
+
+# Add a reminder to the reminders file, shown at login
+
+function add_reminder {
+if [[ "$1" != "" ]]; then
+  echo $1 >> ~/reminders 
+else
+  echo "Remind you about what?"  1>&2
+fi
+}
 
 # Determine disk useage through a modified `du` command
 

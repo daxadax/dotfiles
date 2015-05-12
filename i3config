@@ -17,7 +17,7 @@ exec amixer set Master 20
 ### WINDOW PLACEMENT ###
 exec --no-startup-id i3-msg 'workspace 8; exec /usr/bin/chromium'
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/gnome-terminal'
- # //  exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/thunderbird'
+exec xmessage -file ~/reminders
 
 ### COSMETICS ###
 
