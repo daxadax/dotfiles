@@ -81,25 +81,5 @@ syntax keyword rubyTestStatement
       \ background
 
 
-" minitest specific
 hi link rubyTestMethod Function
 hi link rubyTestStatement Statement
-
-" differentiated standards
-hi rubyInteger  ctermfg=103
-hi rubyFloat    ctermfg=30
-hi rubyString   ctermfg=114
-
-" high visibility 
-hi rubyConstant         ctermfg=202
-hi rubyFunction         ctermfg=202
-hi rubyInstanceVariable ctermfg=55
-hi rubyKeyword          ctermfg=223
-hi rubyKeywordAsMethod  ctermfg=223
-
-" mid visibility
-hi rubyClass            ctermfg=130
-hi rubyDefine           ctermfg=130
-
-" low visibility
-hi rubyComment  ctermfg=22
