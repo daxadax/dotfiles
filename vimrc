@@ -27,3 +27,6 @@ set showmatch
 
 " autoindent
 set autoindent 
+
+" highlight search results
+set hlsearch
