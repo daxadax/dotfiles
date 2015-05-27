@@ -28,7 +28,7 @@ alias connect_to_server_for_tarot='ssh dax@198.167.140.147'
 ### git aliases
 alias gst='git status'
 alias ga='git add'
-alias gc='git commit'
+alias gc='git commit -v'
 alias gco='git checkout'
 alias gba='git branch -a'
 alias gd='git diff'
