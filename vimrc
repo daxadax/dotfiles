@@ -15,6 +15,13 @@ set textwidth=80
 " expand tabs to spaces, default two
 set expandtab
 set tabstop=2
+set shiftwidth=2
+
+" push all vim-generated files to a central location
+" trailing double slash uses full path name to avoid collisions
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 
 " show line numbers
 set number  
@@ -28,5 +35,5 @@ set showmatch
 " autoindent
 set autoindent 
 
-" highlight search results
-set hlsearch
+" remove trailing whitespace in ruby files on save
+autocmd BufWritePre *.rb :%s/\s\+$//e
