@@ -35,5 +35,8 @@ set showmatch
 " autoindent
 set autoindent 
 
+" highlight search results
+set hlsearch
+
 " remove trailing whitespace in ruby files on save
 autocmd BufWritePre *.rb :%s/\s\+$//e
