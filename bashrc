@@ -1,8 +1,15 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+## Arch specific
+
 # If an unknown application is called, search pkgfile for where it can be found
 source /usr/share/doc/pkgfile/command-not-found.bash
+
+## System specific
+alias wireless_down='sudo ifconfig wlp1s0 down'
+alias wireless_up='sudo ifconfig wlp1s0 up'
+
 
 ## reminder helpers
 alias clear_reminders='echo "nothing to do" > ~/reminders'
@@ -15,8 +22,6 @@ alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.
 alias keymap="xmodmap -pke"
 alias unmount_all="udiskie-umount -a"
 alias diskusage=determine_disk_usage
-alias wireless_down='sudo ifconfig wlp1s0 down'
-alias wireless_up='sudo ifconfig wlp1s0 up'
 
 ## connection aliases
 alias connect_to_mysql='sudo systemctl start mysqld.service'
