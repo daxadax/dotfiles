@@ -17,6 +17,9 @@ alias start_manager2='cd ~/programming/manager2/ && screen -t "main" bash -c "cd
 alias clear_reminders='echo "nothing to do" > ~/reminders'
 alias remind_me=add_reminder
 
+## git aliases
+source ~/.aliases/git
+
 ## system aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -31,19 +34,6 @@ alias connect_to_neo="ssh -D 1337 -vN dd@office.neopoly.de"
 alias connect_to_quotes='cd ~/programming/quotes/quotes_app && shotgun -p 2300 config.ru'
 alias connect_to_tarot='cd ~/programming/tarot/tarot_app && shotgun -p 2301 config.ru'
 alias connect_to_vps='ssh dax@198.167.140.147'
-
-### git aliases
-alias gst='git status'
-alias ga='git add'
-alias gc='git commit -v'
-alias gco='git checkout'
-alias gba='git branch -a'
-alias gd='git diff'
-alias stash='git stash'
-alias pop='git stash pop'
-alias gl='git pull'
-alias gp='git push'
-alias gg='git prettylog'
 
 ### shortcuts
 alias r='bundle exec ruby -Ilib:spec:test'
