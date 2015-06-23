@@ -26,8 +26,8 @@ set undodir=~/.vim/undo//
 " show line numbers
 set number  
 
-" enable fuzzy search plugin
-set runtimepath^=~/.vim/plugins/ctrlp.vim
+" use bash-style tab-completion
+set wildmode=longest,list
 
 " show matching brackets
 set showmatch
@@ -40,3 +40,6 @@ set hlsearch
 
 " remove trailing whitespace in ruby files on save
 autocmd BufWritePre *.rb :%s/\s\+$//e
+
+" enable fuzzy search plugin
+set runtimepath^=~/.vim/plugins/ctrlp.vim
