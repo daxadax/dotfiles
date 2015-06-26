@@ -27,6 +27,7 @@ alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.
 alias keymap="xmodmap -pke"
 alias unmount_all="udiskie-umount -a"
 alias diskusage=determine_disk_usage
+alias murder=murder
 
 ## connection aliases
 alias connect_to_mysql='sudo systemctl start mysqld.service'
@@ -51,6 +52,16 @@ if [[ "$1" != "" ]]; then
 else
   echo "Remind you about what?"  1>&2
 fi
+}
+
+# Send a kill -9 signal to PID
+
+function murder {
+  if [[ "$1" != "" ]]; then
+    kill -9 $1
+  else
+    echo "Who shall I kill?"  1>&2
+  fi
 }
 
 # Determine disk useage through a modified `du` command
