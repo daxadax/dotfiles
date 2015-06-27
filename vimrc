@@ -1,5 +1,3 @@
-syntax enable
-
 " use vim settings rather than vi
 set nocompatible
 
