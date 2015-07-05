@@ -15,10 +15,12 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
-" push all vim-generated files to a central location
+" don't generate swap files
+set noswapfile
+
+" push vim-generated files to a central location
 " trailing double slash uses full path name to avoid collisions
 set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
 " show line numbers
