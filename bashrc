@@ -58,7 +58,9 @@ fi
 
 function murder {
   if [[ "$1" != "" ]]; then
+    local process_name="cat /proc/1444/status | sed -n '1p' | awk '{print $NF}'"
     kill -9 $1
+    echo "Murdered process '$process_name' with PID $1"
   else
     echo "Who shall I kill?"  1>&2
   fi
