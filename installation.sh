@@ -16,3 +16,6 @@ mkdir $HOME/.vim/undo
 
 # install rvm
 curl -sSL https://get.rvm.io | bash -s stable
+
+# update pkgfile
+pkgfile --update
