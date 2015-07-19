@@ -10,9 +10,6 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 alias wireless_down='sudo ifconfig wlp1s0 down'
 alias wireless_up='sudo ifconfig wlp1s0 up'
 
-## projects
-alias start_manager2='cd ~/programming/manager2/ && screen -t "main" bash -c "cd main && ./tools/fetch.sh; bash -l"'
-
 ## reminder helpers
 alias clear_reminders='echo "nothing to do" > ~/reminders'
 alias remind_me=add_reminder
