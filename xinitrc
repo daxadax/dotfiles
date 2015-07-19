@@ -21,4 +21,4 @@ udiskie &
 connect_to_mysql &
 
 # Start desktop environment
-exec i3 -c ~/.i3config
+exec i3 -c ~/.i3config -V >> ~/.i3log 2>&1
