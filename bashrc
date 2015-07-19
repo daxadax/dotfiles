@@ -4,7 +4,7 @@
 ## Arch specific
 
 # If an unknown application is called, search pkgfile for where it can be found
-source /usr/share/doc/pkgfile/command-not-found.bash
+source ~/.aliases/command_not_found
 
 ## System specific
 alias wireless_down='sudo ifconfig wlp1s0 down'
