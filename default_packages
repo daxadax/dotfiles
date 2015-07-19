@@ -9,3 +9,5 @@ pidgin
 screen
 scrot
 youtube-dl
+xorg-server
+xorg-server-utils
