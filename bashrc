@@ -28,7 +28,6 @@ alias murder=murder
 
 ## connection aliases
 alias connect_to_mysql='sudo systemctl start mysqld.service'
-alias connect_to_neo="ssh -D 1337 -vN dd@office.neopoly.de"
 alias connect_to_quotes='cd ~/programming/quotes/quotes_app && shotgun -p 2300 config.ru'
 alias connect_to_tarot='cd ~/programming/tarot/tarot_app && shotgun -p 2301 config.ru'
 alias connect_to_vps='ssh dax@198.167.140.147'
