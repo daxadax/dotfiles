@@ -13,3 +13,4 @@ xorg-server
 xorg-server-utils
 xorg-xinit
 pkgfile
+alsa-utils
