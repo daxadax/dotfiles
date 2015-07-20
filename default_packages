@@ -13,3 +13,6 @@ xorg-server
 xorg-server-utils
 xorg-xinit
 pgkfile
+alsa-utils
+openssh
+tree

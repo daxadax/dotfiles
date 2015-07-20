@@ -1,8 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-## Arch specific
-
 # If an unknown application is called, search pkgfile for where it can be found
 source ~/.aliases/command_not_found
 
@@ -28,7 +26,6 @@ alias murder=murder
 
 ## connection aliases
 alias connect_to_mysql='sudo systemctl start mysqld.service'
-alias connect_to_neo="ssh -D 1337 -vN dd@office.neopoly.de"
 alias connect_to_quotes='cd ~/programming/quotes/quotes_app && shotgun -p 2300 config.ru'
 alias connect_to_tarot='cd ~/programming/tarot/tarot_app && shotgun -p 2301 config.ru'
 alias connect_to_vps='ssh dax@198.167.140.147'
