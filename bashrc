@@ -1,8 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-## Arch specific
-
 # If an unknown application is called, search pkgfile for where it can be found
 source ~/.aliases/command_not_found
 
