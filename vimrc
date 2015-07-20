@@ -43,3 +43,7 @@ autocmd BufWritePre *.rb :%s/\s\+$//e
 
 " enable fuzzy search plugin
 set runtimepath^=~/.vim/plugins/ctrlp.vim
+
+" file extension syntax mapping
+au BufNewFile,BufRead *.thor set filetype=ruby
+
