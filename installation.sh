@@ -1,16 +1,18 @@
 #!/bin/bash
 
 # clone necessary files
-git clone https://github.com/daxadax/dotfiles.git
-cd dotfiles
+#git clone https://github.com/daxadax/dotfiles.git
+#cd dotfiles
 ./dotfiles_init.sh
 
 
 # install all default packages
 for i in $(cat $HOME/.default_packages | xargs -L1); do sudo pacman -S $i; done
 
-#create vim directories
+# update pkgfile cache
+pkgfile --update
 
+#create vim directories
 mkdir $HOME/.vim/backup
 mkdir $HOME/.vim/undo
 
