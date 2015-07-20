@@ -12,7 +12,11 @@ for i in $(cat $HOME/.default_packages | xargs -L1); do sudo pacman -S $i; done
 # update pkgfile cache
 pkgfile --update
 
-#create vim directories
+# turn off pcspeaker beep
+rmmod pcspkr
+echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+
+# create vim directories
 mkdir $HOME/.vim/backup
 mkdir $HOME/.vim/undo
 
