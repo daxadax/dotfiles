@@ -39,7 +39,13 @@ alias feh='feh -.'
 ## export
 export EDITOR=vim
 
-# Add a reminder to the reminders file, shown at login
+# Export values for iBus and start daemon
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon -drx
+
+#Add a reminder to the reminders file, shown at login
 
 function add_reminder {
 if [[ "$1" != "" ]]; then
