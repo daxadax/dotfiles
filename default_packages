@@ -16,3 +16,6 @@ pgkfile
 alsa-utils
 openssh
 tree
+ibus
+ibus-hangul
+ttf-baekmuk
