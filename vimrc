@@ -1,6 +1,10 @@
 " use vim settings rather than vi
 set nocompatible
 
+" use pathogen
+execute pathogen#infect()
+filetype plugin indent on
+
 " use solarized color scheme
 syntax enable
 set t_Co=256
@@ -40,9 +44,6 @@ set hlsearch
 
 " remove trailing whitespace in ruby files on save
 autocmd BufWritePre *.rb :%s/\s\+$//e
-
-" enable fuzzy search plugin
-set runtimepath^=~/.vim/plugins/ctrlp.vim
 
 " file extension syntax mapping
 au BufNewFile,BufRead *.thor set filetype=ruby
