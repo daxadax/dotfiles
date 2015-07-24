@@ -14,6 +14,9 @@ fi
 # Start udiskie for automounting usb devices
 udiskie &
 
+# Turn on numlock
+numlockx &
+
 # Source bashrc
 . ~/.bashrc &
 
