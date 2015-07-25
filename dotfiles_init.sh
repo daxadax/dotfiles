@@ -7,7 +7,7 @@ dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
 files="bash_profile gitconfig i3status.conf screenrc bashrc i3config profile
-xinitrc vimrc default_packages"   
+xinitrc vimrc default_packages gemrc"   
 
 folders="vim aliases"
 
