@@ -4,4 +4,7 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
 fi
 
 # Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin" 
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# source RVM scripts
+source $HOME/.rvm/scripts/rvm
