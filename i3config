@@ -4,29 +4,31 @@
 
 set $mod Mod1
 
+##### STARTUP BLOCK #####
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-### ENERGY SETTINGS ###
+### Energy settings ###
 exec xbacklight -set 50
 
-### DEFAULT VOLUME ###
+### Default volume ###
 exec amixer set Master 20
 
-### WINDOW PLACEMENT ###
+### Window placement/styling ###
 exec --no-startup-id i3-msg 'workspace 8; exec /usr/bin/chromium'
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/gnome-terminal'
 exec xmessage -file ~/.reminders
 
-### COSMETICS ###
+# the last window manipulated is the one that is present on startup
+for_window [class="Chromium"]       border none
+for_window [class="Gnome-terminal"] border none
 
 # hide the mouse pointer
 exec xdotool mousemove 1500 1200
 
-# the last window manipulated is the one that is present on startup
-for_window [class="Chromium"]       border none
-for_window [class="Gnome-terminal"] border none
+##### END STARTUP BLOCK #####
 
 ### USER KEYBINDINGS ###
 
