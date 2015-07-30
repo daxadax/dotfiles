@@ -23,6 +23,7 @@ alias keymap="xmodmap -pke"
 alias unmount_all="udiskie-umount -a"
 alias diskusage=determine_disk_usage
 alias murder=murder
+alias for_files_in=for_files_in
 
 ## connection aliases
 alias connect_to_mysql='sudo systemctl start mysqld.service'
@@ -44,6 +45,15 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 ibus-daemon -drx
+
+# Loop through files in directory and do something
+function for_files_in {
+if [ $# -lt 2 ]; then
+  echo "Usage: for_files_in <directory> <command to preform on each file>"
+fi
+
+for file in $1/*; do $2 $file; done
+}
 
 #Add a reminder to the reminders file, shown at login
 
