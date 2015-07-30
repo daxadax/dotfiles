@@ -9,7 +9,7 @@ alias wireless_down='sudo ifconfig wlp1s0 down'
 alias wireless_up='sudo ifconfig wlp1s0 up'
 
 ## reminder helpers
-alias clear_reminders='echo "nothing to do" > ~/reminders'
+alias clear_reminders='echo "nothing to do" > ~/.reminders'
 alias remind_me=add_reminder
 
 ## git aliases
@@ -59,7 +59,7 @@ for file in $1/*; do $2 $file; done
 
 function add_reminder {
 if [[ "$1" != "" ]]; then
-  echo $1 >> ~/reminders 
+  echo $1 >> ~/.reminders 
 else
   echo "Remind you about what?"  1>&2
 fi
