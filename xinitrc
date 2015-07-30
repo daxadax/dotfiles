@@ -23,5 +23,8 @@ numlockx &
 # Start mysql server
 connect_to_mysql &
 
+# Start screen locker
+xautolock -time 10 -locker "i3lock -c 000000" &
+
 # Start desktop environment
 exec i3 -c ~/.i3config -V >> ~/.i3log 2>&1

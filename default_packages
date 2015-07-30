@@ -5,6 +5,7 @@ feh
 gnome-terminal
 i3-wm
 i3status
+i3lock
 pidgin
 screen
 scrot
@@ -12,6 +13,7 @@ youtube-dl
 xorg-server
 xorg-server-utils
 xorg-xinit
+xautolock
 pgkfile
 alsa-utils
 openssh
