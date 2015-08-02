@@ -14,6 +14,9 @@ fi
 # Start udiskie for automounting usb devices
 udiskie &
 
+# Start dunst for notifications
+dunst -config ~/.dunstrc &
+
 # Turn on numlock
 numlockx &
 
