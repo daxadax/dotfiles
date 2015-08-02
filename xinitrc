@@ -14,9 +14,6 @@ fi
 # Start devmon for automounting
 devmon &
 
-# Start dunst for notifications
-dunst -config ~/.dunstrc &
-
 # Turn on numlock
 numlockx &
 
