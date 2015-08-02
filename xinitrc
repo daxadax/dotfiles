@@ -12,10 +12,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 # Start devmon for automounting
-devmon &
+devmon --exec-on-drive "notify-send '%f has been mounted'" --exec-on-unmount "notify-send '%f has been unmounted'" --exec-on-remove "notify-send '%f has been removed'" &
 
 # Start dunst
-dunst -config ~/.dunstrc
+dunst -config ~/.dunstrc &
 
 # Turn on numlock
 numlockx &
