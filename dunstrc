@@ -1,6 +1,6 @@
 [global]
-  font = Monospace 23
-  format = "%a: %s %b"
+  font = Monospace 15
+  format = "%s %b"
   plain_text = yes
   sort = yes
   indicate_hidden = yes
@@ -10,7 +10,7 @@
 
   word_wrap = yes
 
-  geometry = "-x0+0+0"
+  geometry = "0x0-5-23"
   transparency = 0
 
   # don't remove messages if user is idle
@@ -26,8 +26,8 @@
 
   separator_color = auto
 
-  padding = 1
-  horizontal_padding = 9
+  padding = 5
+  horizontal_padding = 10
 
 [frame]
   width = 3
