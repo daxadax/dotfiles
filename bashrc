@@ -20,7 +20,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 alias keymap="xmodmap -pke"
-alias unmount_all="udiskie-umount -a"
+alias unmount_all="devmon --unmount-all"
 alias diskusage=determine_disk_usage
 alias murder=murder
 alias for_files_in=for_files_in
