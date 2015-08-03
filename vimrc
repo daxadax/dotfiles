@@ -48,3 +48,5 @@ autocmd BufWritePre *.rb :%s/\s\+$//e
 " file extension syntax mapping
 au BufNewFile,BufRead *.thor set filetype=ruby
 
+" search for visually hightlighted text
+vnoremap <c-f> y<ESC>/<c-r>"<CR>  
