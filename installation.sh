@@ -5,7 +5,6 @@ git clone https://github.com/daxadax/dotfiles.git
 cd dotfiles
 ./dotfiles_init.sh
 
-
 # install all default packages
 for i in $(cat $HOME/.default_packages | xargs -L1); do sudo pacman -S $i; done
 
@@ -22,6 +21,3 @@ mkdir $HOME/.vim/undo
 
 # install rvm
 curl -sSL https://get.rvm.io | bash -s stable
-
-# update pkgfile
-pkgfile --update
