@@ -19,5 +19,8 @@ echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 mkdir $HOME/.vim/backup
 mkdir $HOME/.vim/undo
 
-# install rvm
-curl -sSL https://get.rvm.io | bash -s stable
+# conditionally install rvm
+# see possible implementation here 
+# http://stackoverflow.com/a/21128172/2128691
+#
+#curl -sSL https://get.rvm.io | bash -s stable
