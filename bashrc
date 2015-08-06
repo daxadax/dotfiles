@@ -4,6 +4,9 @@
 # If an unknown application is called, search pkgfile for where it can be found
 source ~/.aliases/command_not_found
 
+#add helper to build from aur
+source ~/.aliases/build_from_aur
+
 ## System specific
 alias wireless_down='sudo ifconfig wlp1s0 down'
 alias wireless_up='sudo ifconfig wlp1s0 up'
