@@ -32,7 +32,7 @@ alias for_files_in=for_files_in
 alias connect_to_mysql='sudo systemctl start mysqld.service'
 alias connect_to_quotes='cd ~/programming/quotes/quotes_app && shotgun -p 2300 config.ru'
 alias connect_to_tarot='cd ~/programming/tarot/tarot_app && shotgun -p 2301 config.ru'
-alias connect_to_vps='ssh dax@198.167.140.147'
+alias connect_to_vps='ssh root@198.167.140.147'
 
 ### shortcuts
 alias r='bundle exec ruby -Ilib:spec:test'

@@ -49,4 +49,7 @@ autocmd BufWritePre *.rb :%s/\s\+$//e
 au BufNewFile,BufRead *.thor set filetype=ruby
 
 " search for visually hightlighted text
-vnoremap <c-f> y<ESC>/<c-r>"<CR>  
+vnoremap <c-f> y<ESC>/<c-r>"<CR>
+
+" toggle paste mode with alt+p
+set pastetoggle=<F10>
