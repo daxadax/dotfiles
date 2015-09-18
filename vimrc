@@ -53,3 +53,6 @@ vnoremap <c-f> y<ESC>/<c-r>"<CR>
 
 " toggle paste mode with alt+p
 set pastetoggle=<F10>
+
+" custom commands
+command -range Snakify <line1>,<line2>s #\(\<\u\l\+\|\l\+\)\(\u\)#\l\1_\l\2#g
