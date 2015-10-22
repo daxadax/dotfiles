@@ -8,8 +8,8 @@ source ~/.aliases/command_not_found
 source ~/.aliases/build_from_aur
 
 ## System specific
-alias wireless_down='sudo ifconfig wlp1s0 down'
-alias wireless_up='sudo ifconfig wlp1s0 up'
+alias wireless_down='sudo ip link set wlp1s0 down'
+alias wireless_up='sudo ip link set wlp1s0 up'
 
 ## reminder helpers
 alias clear_reminders='echo "nothing to do" > ~/.reminders'
