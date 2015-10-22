@@ -22,8 +22,7 @@ exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/gnome-terminal'
 exec xmessage -file ~/.reminders
 
 # the last window manipulated is the one that is present on startup
-for_window [class="Chromium"]       border none
-for_window [class="Gnome-terminal"] border none
+new_window none
 
 # hide the mouse pointer
 exec xdotool mousemove 1500 1200
