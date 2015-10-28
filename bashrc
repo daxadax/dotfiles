@@ -39,6 +39,7 @@ alias r='bundle exec ruby -Ilib:spec:test'
 alias block='echo befc523d-8815-4245-be01-81ecd2a8bd99'
 alias pidgin='pidgin &'
 alias feh='feh -.'
+alias remove_exif_data='exiftool -r -overwrite_original -all= *'
 
 ## export
 export EDITOR=vim
