@@ -24,6 +24,7 @@ alias grep='grep --color=auto'
 alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 alias keymap="xmodmap -pke"
 alias unmount_all="devmon --unmount-all"
+alias last_update=get_last_update
 alias diskusage=determine_disk_usage
 alias murder=murder
 alias for_files_in=for_files_in
@@ -49,6 +50,11 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 ibus-daemon -drx
+
+# Get date of last full system update
+function get_last_update {
+  awk '/pacman -Syu/ {print $1" "$2}' /var/log/pacman.log | tail -n 1 | cut -c 2-17
+}
 
 # Loop through files in directory and do something
 function for_files_in {
