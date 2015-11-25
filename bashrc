@@ -4,8 +4,9 @@
 # If an unknown application is called, search pkgfile for where it can be found
 source ~/.aliases/command_not_found
 
-#add helper to build from aur
+#add various helpers
 source ~/.aliases/build_from_aur
+source ~/.aliases/import_photos.sh
 
 ## System specific
 alias wireless_down='sudo ip link set wlp1s0 down'
@@ -28,11 +29,13 @@ alias last_update=get_last_update
 alias diskusage=determine_disk_usage
 alias murder=murder
 alias for_files_in=for_files_in
+alias import_photos=import_photos
 
 ## connection aliases
 alias connect_to_mysql='sudo systemctl start mysqld.service'
 alias connect_to_quotes='cd ~/programming/quotes/quotes_app && shotgun -p 2300 config.ru'
 alias connect_to_tarot='cd ~/programming/tarot/tarot_app && shotgun -p 2301 config.ru'
+alias connect_to_foodshed='cd ~/programming/foodshed && shotgun -p 2302 config.ru'
 alias connect_to_vps='ssh root@198.167.140.147'
 
 ### shortcuts
