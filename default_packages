@@ -11,8 +11,10 @@ i3lock
 i3status
 ibus
 ibus-hangul
+mariadb
 numlockx
 openssh
+perl-image-exiftool
 pgkfile
 screen
 scrot
@@ -20,7 +22,6 @@ tree
 ttf-baekmuk
 udevil
 udisks2
-perl-image-exiftool
 xautolock
 xorg-server
 xorg-server-utils
