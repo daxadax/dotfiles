@@ -6,7 +6,9 @@ cd dotfiles
 ./dotfiles_init.sh
 
 # install all default packages
-for i in $(cat $HOME/.default_packages | xargs -L1); do sudo pacman -Si $i; done
+for i in $(cat $HOME/.default_packages | xargs -L1); do
+  sudo pacman -S $i;
+done
 
 # update pkgfile cache
 pkgfile --update
