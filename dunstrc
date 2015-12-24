@@ -35,7 +35,7 @@
 
 [shortcuts]
     close = $mod+ctrl+x
-    history = $mod+grave
+    history = $mod+ctrl+grave
 
 [urgency_low]
   # IMPORTANT: colors have to be defined in quotation marks.
