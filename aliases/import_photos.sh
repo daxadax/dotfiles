@@ -13,10 +13,7 @@ function import_photos {
     cd $FILEPATH
   fi
 
-  for FILE in /media/NIKON\ D40/DCIM/100NCD40/*.JPG
-  do
-    exiftool -d %Y_%m_%d "-directory<FileModifyDate" "$FILE"
-  done
+  exiftool -r -o -d %Y_%m_%d__%H:%M:%S.%%e -directory=$FILEPATH "-FileName<CreateDate" /media/NIKON\ D40/DCIM/100NCD40/
   
-  exiftool -r -overwrite_original -all=*
+  #exiftool -r -overwrite_original -all=*
 }
