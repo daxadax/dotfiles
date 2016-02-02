@@ -13,7 +13,9 @@ function import_photos {
     cd $FILEPATH
   fi
 
-  exiftool -r -o -d %Y_%m_%d__%H:%M:%S.%%e -directory=$FILEPATH "-FileName<CreateDate" /media/NIKON\ D40/DCIM/100NCD40/
+  exiftool '-filename<CreateDate' -d %Y_%m_%d__%H:%M:%S.%%le -r -directory=$FILEPATH /media/NIKON\ D40/DCIM/100NCD40/
+
+  #exiftool -r -o -d %Y_%m_%d__%H:%M:%S.%%le -directory=$FILEPATH "-FileName<CreateDate" /media/NIKON\ D40/DCIM/100NCD40/
   
   #exiftool -r -overwrite_original -all=*
 }
