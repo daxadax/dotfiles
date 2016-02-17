@@ -11,6 +11,9 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
+" use 'vim-airline' all the time
+set laststatus=2 
+
 " set size
 set textwidth=80
 
