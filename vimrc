@@ -11,8 +11,10 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
-" use 'vim-airline' all the time
+"  ### VIM-AIRLINE SETTINGS ###
+"use 'vim-airline' all the time
 set laststatus=2 
+let g:airline_enable_branch=1
 
 " set size
 set textwidth=80
@@ -32,6 +34,9 @@ set undodir=~/.vim/undo//
 
 " show line numbers
 set number  
+
+" show trailing whitespace as lil' dots
+set list listchars=trail:·
 
 " use bash-style tab-completion
 set wildmode=longest,list
