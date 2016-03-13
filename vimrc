@@ -1,6 +1,9 @@
 " use vim settings rather than vi
 set nocompatible
 
+" map esc functionality to the Enter key
+inoremap <CR> <Esc>
+
 " use pathogen
 execute pathogen#infect()
 filetype plugin indent on
