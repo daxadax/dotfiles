@@ -18,7 +18,7 @@ devmon --exec-on-drive "notify-send '%f has been mounted'" --exec-on-unmount "no
 dunst -config ~/.dunstrc &
 
 # Set backlight to 50
-tee /sys/class/backlight/intel_backlight/brightness <<< 500
+tee /sys/class/backlight/intel_backlight/brightness <<< 500 &
 
 # Turn on numlock
 numlockx &
