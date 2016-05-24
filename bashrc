@@ -1,6 +1,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+## export
+export EDITOR=vim
+export WIRELESS_INTERFACE=`iw dev | sed '2q;d' | awk '{print $NF}'`
+
 # If an unknown application is called, search pkgfile for where it can be found
 source ~/.aliases/command_not_found
 
@@ -9,8 +13,8 @@ source ~/.aliases/build_from_aur
 source ~/.aliases/import_photos.sh
 
 ## System specific
-alias wireless_down='sudo ip link set wlp1s0 down'
-alias wireless_up='sudo ip link set wlp1s0 up'
+alias wireless_down='sudo ip link set $WIRELESS_INTERFACE down'
+alias wireless_up='sudo ip link set $WIRELESS_INTERFACE up'
 
 ## reminder helpers
 alias clear_reminders='echo "nothing to do" > ~/.reminders'
@@ -45,14 +49,18 @@ alias pidgin='pidgin &'
 alias feh='feh -.'
 alias remove_exif_data='exiftool -r -overwrite_original -all= *'
 
-## export
-export EDITOR=vim
-
 # Export values for iBus and start daemon
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 ibus-daemon -drx
+
+# Get relative wireless signal strength
+function WIP-get_signal_strength {
+  local signal=`iwconfig $WIRELESS_INTERFACE |grep Signal`
+  local formatted_signal=$($signal | cut -d'=' -f2 | cut -d'/' -f1)
+  echo $formatted_signal 70 | awk '{print $1 / $2}'
+}
 
 # Get date of last full system update
 function get_last_update {
@@ -69,7 +77,6 @@ for file in $1/*; do $2 $file; done
 }
 
 #Add a reminder to the reminders file, shown at login
-
 function add_reminder {
 if [[ "$1" != "" ]]; then
   echo $1 >> ~/.reminders 
@@ -79,7 +86,6 @@ fi
 }
 
 # Send a kill -9 signal to PID
-
 function murder {
   if [[ "$1" != "" ]]; then
     local process_name="cat /proc/1444/status | sed -n '1p' | awk '{print $NF}'"
@@ -91,7 +97,6 @@ function murder {
 }
 
 # Determine disk useage through a modified `du` command
-
 function determine_disk_usage {
   if [[ "$1" !=  "" ]]; then
     DIR="$1"
@@ -102,15 +107,12 @@ function determine_disk_usage {
   sudo du -h --max-depth=1 $DIR | sort -h
 }
 
-
 ## Determine the current git-branch if in a git directory
-
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\<\1\> /'
 }
 
 # Name screen tabs whatever the current directory is
-
 function set_screen_title {
   if [[ "$TERM" == screen* ]]; then
     local TITLE="$PWD"
@@ -124,7 +126,6 @@ function set_screen_title {
 }
 
 ## Export the prompt
-
 export PROMPT_COMMAND=set_screen_title
 
 PS1='\[\033[0;37m\][\[\e[0;37m\]\[\e[0;37m\]\[\e[0;37m\]\[\e[0;37m\]\w\[\e[0;37m\]]\[\e[0;37m\]\[\033[1;31m\]$(parse_git_branch)\[\033[1;31m\]\[\e[0;37m\]'
