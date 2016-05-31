@@ -3,7 +3,7 @@
 
 ## export
 export EDITOR=vim
-export WIRELESS_INTERFACE=`iw dev | sed '2q;d' | awk '{print $NF}'`
+export WIRELESS_INTERFACE=`iw dev | sed '2q;d' | cut -d' ' -f2`
 
 # If an unknown application is called, search pkgfile for where it can be found
 source ~/.aliases/command_not_found
