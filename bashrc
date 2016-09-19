@@ -5,12 +5,8 @@
 export EDITOR=vim
 export WIRELESS_INTERFACE=`iw dev | sed '2q;d' | cut -d' ' -f2`
 
-# If an unknown application is called, search pkgfile for where it can be found
-source ~/.aliases/command_not_found
-
-#add various helpers
-source ~/.aliases/build_from_aur
-source ~/.aliases/import_photos.sh
+## source all files in the 'aliases' directory
+for f in ~/.aliases/*; do source $f; done
 
 ## System specific
 alias wireless_down='sudo ip link set $WIRELESS_INTERFACE down'
