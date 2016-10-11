@@ -4,6 +4,8 @@
 ## export
 export EDITOR=vim
 export WIRELESS_INTERFACE=`iw dev | sed '2q;d' | cut -d' ' -f2`
+export HISTSIZE=10000
+export HISTFILESIZE=10000
 
 ## source all files in the 'aliases' directory
 for f in ~/.aliases/*; do source $f; done
