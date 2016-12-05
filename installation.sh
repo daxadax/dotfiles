@@ -1,28 +1,32 @@
 #!/bin/bash
 
-# clone necessary files
-git clone https://github.com/daxadax/dotfiles.git
 cd dotfiles
 ./dotfiles_init.sh
 
 # install all default packages
 for i in $(cat $HOME/.default_packages | xargs -L1); do
-  sudo pacman -S $i;
+  sudo pacman --noconfirm -S $i;
 done
 
 # update pkgfile cache
-pkgfile --update
+sudo pkgfile --update
 
 # turn off pcspeaker beep
-rmmod pcspkr
+sudo rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 
 # create vim directories
 mkdir $HOME/.vim/backup
 mkdir $HOME/.vim/undo
 
-# conditionally install rvm
-# see possible implementation here 
-# http://stackoverflow.com/a/21128172/2128691
-#
-#curl -sSL https://get.rvm.io | bash -s stable
+# install solarized colors for gnome-terminal
+cd ~
+git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git
+cd gnome-terminal-colors-solarized
+./install.sh
+
+
+# install rvm
+cd
+gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable
