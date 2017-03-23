@@ -40,10 +40,10 @@ alias connect_to_tarot='cd ~/programming/tarot/tarot_app && shotgun -p 2301 conf
 alias connect_to_vps='ssh dax@198.167.140.147'
 
 ### shortcuts
-alias r='bundle exec ruby -Ilib:spec:test'
 alias block='echo befc523d-8815-4245-be01-81ecd2a8bd99'
-alias pidgin='pidgin &'
 alias feh='feh -.'
+alias r='bundle exec ruby -Ilib:spec:test'
+alias rake='bundle exec rake'
 alias remove_exif_data='exiftool -r -overwrite_original -all= *'
 
 # Export values for iBus and start daemon
