@@ -1,10 +1,10 @@
 alsa-utils
 aria2
 bleachbit
-firefox
 dunst
 evince
 feh
+firefox
 gnome-terminal
 i3-wm
 i3lock
@@ -16,6 +16,7 @@ numlockx
 openssh
 perl-image-exiftool
 pgkfile
+pulseaudio-equalizer
 screen
 scrot
 tree
