@@ -50,8 +50,8 @@ set autoindent
 " highlight search results
 set hlsearch
 
-" remove trailing whitespace in ruby files on save
-autocmd BufWritePre *.rb :%s/\s\+$//e
+" remove trailing whitespace in given file extensions on save
+autocmd BufWritePre *.rb,*.txt :%s/\s\+$//e
 
 " file extension syntax mapping
 au BufNewFile,BufRead *.thor set filetype=ruby
