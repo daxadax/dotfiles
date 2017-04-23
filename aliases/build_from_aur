@@ -10,6 +10,7 @@ build_from_aur(){
   mv $tarball ~/AUR/$base/
   cd ~/AUR/$base
   tar -xvf $file
+  cd ~/AUR/$base
   makepkg -sri
 }
 
