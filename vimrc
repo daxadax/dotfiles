@@ -50,8 +50,10 @@ set autoindent
 " highlight search results
 set hlsearch
 
-" remove trailing whitespace in given file extensions on save
-autocmd BufWritePre *.rb,*.txt :%s/\s\+$//e
+" remove trailing whitespace in all files with non-blacklisted extensions
+" from stackoverflow.com/a/10410590/2128691
+let blacklist = ['md']
+autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\s\+$//e
 
 " file extension syntax mapping
 au BufNewFile,BufRead *.thor set filetype=ruby
