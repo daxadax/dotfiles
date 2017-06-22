@@ -1,6 +1,6 @@
 alias gst='git status'
 alias ga='git add'
-alias gc='git commit -v'
+alias gc=run_rubocop_if_exists_and_commit
 alias gco='git checkout'
 alias gba='git branch -a'
 alias gd='git diff'
@@ -12,3 +12,11 @@ alias gg='git log'
 alias gfiles='git whatchanged --oneline --name-only | grep --extended-regexp --invert-match '^[[:xdigit:]]{7,}' | head -n20'
 alias prune='git remote prune origin'
 alias 'ghistory'='git show -3 --stat'
+
+function run_rubocop_if_exists_and_commit {
+  if [ "$(type -t rubocop)" = "file" ]; then
+    rubocop && git commit -v
+  else
+    git commit -v
+  fi
+}
