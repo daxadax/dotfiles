@@ -15,8 +15,8 @@ alias 'ghistory'='git show -3 --stat'
 
 function run_rubocop_if_exists_and_commit {
   if [ "$(type -t rubocop)" = "file" ]; then
-    rubocop && git commit -v
+    rubocop && git commit -v $1
   else
-    git commit -v
+    git commit -v $1
   fi
 }
