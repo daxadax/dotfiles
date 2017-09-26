@@ -4,8 +4,8 @@
 ## export
 export EDITOR=vim
 export WIRELESS_INTERFACE=`iw dev | sed '2q;d' | cut -d' ' -f2`
-export HISTSIZE=10000
-export HISTFILESIZE=10000
+export HISTSIZE=100000
+export HISTFILESIZE=100000
 
 ## source all files in the 'aliases' directory
 for f in ~/.aliases/*; do source $f; done
@@ -76,7 +76,7 @@ for file in $1/*; do $2 $file; done
 #Add a reminder to the reminders file, shown at login
 function add_reminder {
 if [[ "$1" != "" ]]; then
-  echo $1 >> ~/.reminders 
+  echo $1 >> ~/.reminders
 else
   echo "Remind you about what?"  1>&2
 fi
