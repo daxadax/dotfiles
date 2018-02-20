@@ -45,6 +45,7 @@ alias feh='feh -.'
 alias r='bundle exec ruby -Ilib:spec:test'
 alias rake='bundle exec rake'
 alias remove_exif_data='exiftool -r -overwrite_original -all= *'
+alias telemimi='~/Telegram/Telegram & exit'
 
 # Export values for iBus and start daemon
 export GTK_IM_MODULE=ibus
