@@ -13,7 +13,7 @@ colorscheme solarized
 
 "  ### VIM-AIRLINE SETTINGS ###
 "use 'vim-airline' all the time
-set laststatus=2 
+set laststatus=2
 let g:airline_enable_branch=1
 
 " set size
@@ -33,7 +33,7 @@ set backupdir=~/.vim/backup//
 set undodir=~/.vim/undo//
 
 " show line numbers
-set number  
+set number
 
 " show trailing whitespace as lil' dots
 set list listchars=trail:·
@@ -45,7 +45,7 @@ set wildmode=longest,list
 set showmatch
 
 " autoindent
-set autoindent 
+set autoindent
 
 " highlight search results
 set hlsearch
