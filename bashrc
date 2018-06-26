@@ -34,6 +34,7 @@ alias for_files_in=for_files_in
 alias import_photos=import_photos
 
 ## connection aliases
+alias connect_to_wifi='sudo wifi-menu'
 alias connect_to_mysql='sudo systemctl start mysqld.service'
 alias connect_to_quotes='cd ~/programming/quotes/quotes_app && shotgun -p 2300 config.ru'
 alias connect_to_tarot='cd ~/programming/tarot/tarot_app && shotgun -p 2301 config.ru'
