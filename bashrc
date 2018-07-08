@@ -24,6 +24,8 @@ source ~/.aliases/git
 ## system aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+# display active user processes
+alias pp='ps -u $(whoami) -o ucmd,pid,%cpu,%mem'
 alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 alias keymap="xmodmap -pke"
 alias unmount_all="devmon --unmount-all"
