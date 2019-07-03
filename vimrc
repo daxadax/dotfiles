@@ -16,6 +16,9 @@ colorscheme solarized
 set laststatus=2
 let g:airline_enable_branch=1
 
+" git-blame for vim settings
+nnoremap <Space>gb :<C-u>call gitblame#echo()<CR>
+
 " set size
 set textwidth=80
 
