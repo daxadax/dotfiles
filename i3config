@@ -32,9 +32,9 @@ exec xdotool mousemove 1500 1200
 ### USER KEYBINDINGS ###
 
 #volume
-bindsym XF86AudioMute exec amixer set Master 0
-bindsym XF86AudioRaiseVolume exec amixer set Master 5+
-bindsym XF86AudioLowerVolume exec amixer set Master 5-
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # amixer doesn't toggle headphones
+bindsym XF86AudioRaiseVolume exec amixer set Master 3dB+
+bindsym XF86AudioLowerVolume exec amixer set Master 3dB-
 
 #brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
