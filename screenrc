@@ -3,8 +3,8 @@ defscrollback 5000
 vbell off
 
 # KEY BINDINGS
-bindkey ^[[1;6D prev
-bindkey ^[[1;6C next
+bindkey ^[[1;6D prev # ctrl + shift + left arrow
+bindkey ^[[1;6C next # ctrl + shift + right arrow
 
 # For RVM
 shell -${SHELL}
