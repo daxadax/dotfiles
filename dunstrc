@@ -26,22 +26,22 @@
 
   separator_color = auto
 
-  padding = 5
-  horizontal_padding = 10
+  padding = 25
+  horizontal_padding = 25
 
 [frame]
   width = 3
-  color = "#aaaaaa"
+  color = "#b58900"
 
 [shortcuts]
-    close = $mod+ctrl+x
-    history = $mod+ctrl+grave
+    close = ctrl+x
+    history = ctrl+grave
 
 [urgency_low]
   # IMPORTANT: colors have to be defined in quotation marks.
   # Otherwise the "#" and following would be interpreted as a comment.
-  background = "#222222"
-  foreground = "#888888"
+  background = "#002b36"
+  foreground = "#b58900"
   timeout = 5
 
 [urgency_normal]
