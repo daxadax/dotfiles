@@ -36,6 +36,9 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # amixer doesn't toggle 
 bindsym XF86AudioRaiseVolume exec amixer set Master 3dB+
 bindsym XF86AudioLowerVolume exec amixer set Master 3dB-
 
+#mic
+bindsym XF86AudioMicMute exec amixer set Capture toggle
+
 #brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
