@@ -11,6 +11,9 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
+" ctrlp settings
+let g:ctrlp_max_files=0
+
 "  ### VIM-AIRLINE SETTINGS ###
 "use 'vim-airline' all the time
 set laststatus=2
