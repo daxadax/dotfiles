@@ -12,6 +12,7 @@ alias gg='git log'
 alias prune='git remote prune origin'
 alias 'ghistory'='git show -3 --stat'
 alias branch_diff='git whatchanged --name-status --pretty="" origin..HEAD | sort | uniq'
+alias branch_grep=branch_grep
 
 function run_rubocop_if_exists_and_commit {
   if [ "$(type -t rubocop)" = "file" ]; then
@@ -19,4 +20,8 @@ function run_rubocop_if_exists_and_commit {
   else
     git commit -v $1
   fi
+}
+
+function branch_grep {
+  git grep $1  $(git whatchanged --name-only --pretty="" origin..HEAD | sort | uniq)
 }
