@@ -21,6 +21,10 @@ alias remind_me=add_reminder
 ## git aliases
 source ~/.aliases/git
 
+## curlable webapps
+alias weather_capp='curl wttr.in'
+alias crypto_capp='curl rate.sx'
+
 ## system aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
