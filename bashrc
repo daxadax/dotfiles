@@ -33,6 +33,9 @@ alias pp='ps -u $(whoami) -o ucmd,pid,%cpu,%mem'
 alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 alias keymap="xmodmap -pke"
 alias unmount_all="devmon --unmount-all"
+alias lock_display="i3lock -c000000"
+
+## helpers
 alias last_update=get_last_update
 alias diskusage=determine_disk_usage
 alias murder=murder
