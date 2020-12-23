@@ -9,8 +9,6 @@ gnome-terminal
 i3-wm
 i3lock
 i3status
-ibus
-ibus-hangul
 mariadb
 numlockx
 openssh
