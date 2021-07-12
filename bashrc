@@ -34,6 +34,7 @@ alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.
 alias keymap="xmodmap -pke"
 alias unmount_all="devmon --unmount-all"
 alias lock_display="i3lock -c000000"
+alias zzz="systemctl suspend"
 
 ## helpers
 alias last_update=get_last_update
