@@ -57,12 +57,6 @@ alias rake='bundle exec rake'
 alias remove_exif_data='exiftool -r -overwrite_original -all= *'
 alias telemimi='~/Telegram/Telegram & exit'
 
-# Export values for iBus and start daemon
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-ibus-daemon -drx
-
 # Get relative wireless signal strength
 function WIP-get_signal_strength {
   local signal=`iwconfig $WIRELESS_INTERFACE |grep Signal`
