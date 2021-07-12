@@ -41,6 +41,7 @@ alias diskusage=determine_disk_usage
 alias murder=murder
 alias for_files_in=for_files_in
 alias import_photos=import_photos
+alias stc=screenshot_to_clipboard
 
 ## connection aliases
 alias connect_to_wifi='sudo wifi-menu'
@@ -112,6 +113,11 @@ function determine_disk_usage {
   fi
 
   sudo du -h --max-depth=1 $DIR | sort -h
+}
+
+# take a screenshot with scrot and send it to the clipboard
+function screenshot_to_clipboard {
+  scrot -s -e 'xclip -selection clipboard -t image/png -i $f'
 }
 
 ## Determine the current git-branch if in a git directory
