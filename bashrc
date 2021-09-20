@@ -113,6 +113,7 @@ function determine_disk_usage {
 # take a screenshot with scrot and send it to the clipboard
 function screenshot_to_clipboard {
   scrot -s -e 'xclip -selection clipboard -t image/png -i $f'
+  rm *scrot.png
 }
 
 ## Determine the current git-branch if in a git directory
