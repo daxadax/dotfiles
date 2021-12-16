@@ -1,6 +1,6 @@
 [global]
   font = Monospace 15
-  format = "%s %b"
+  format = "%a\n%s %b"
   plain_text = yes
   sort = yes
   indicate_hidden = yes
@@ -16,9 +16,10 @@
   # don't remove messages if user is idle
   idle_threshold = 0
 
-  monitor = 0
-  follow = none
+  # monitor = 0
+  follow = keyboard
 
+  history_length = 5
   sticky_history = yes
   line_height = 0
 
@@ -29,13 +30,16 @@
   padding = 25
   horizontal_padding = 25
 
+  # i don't really need this, but not setting it results in an error
+  icon_path = /usr/share/icons/Adwaita/16x16/legacy/
+
 [frame]
   width = 3
   color = "#b58900"
 
 [shortcuts]
     close = ctrl+x
-    history = ctrl+grave
+    history = ctrl+shift+h
 
 [urgency_low]
   # IMPORTANT: colors have to be defined in quotation marks.
