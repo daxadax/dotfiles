@@ -13,6 +13,7 @@ for f in ~/.aliases/*; do source $f; done
 ## System specific
 alias wireless_down='sudo ip link set $WIRELESS_INTERFACE down'
 alias wireless_up='sudo ip link set $WIRELESS_INTERFACE up'
+alias cycle_vpn=cycle_vpn_connection
 
 ## reminder helpers
 alias clear_reminders='echo "nothing to do" > ~/.reminders'
@@ -86,6 +87,13 @@ if [[ "$1" != "" ]]; then
 else
   echo "Remind you about what?"  1>&2
 fi
+}
+
+function cycle_vpn_connection {
+  local target="${1:-cz}"
+
+  expressvpn disconnect
+  expressvpn connect $target
 }
 
 # Send a kill -9 signal to PID
