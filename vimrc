@@ -13,6 +13,7 @@ colorscheme solarized
 
 " ctrlp settings
 let g:ctrlp_max_files=0
+set wildignore+=*/node_modules/*
 
 "  ### VIM-AIRLINE SETTINGS ###
 "use 'vim-airline' all the time
