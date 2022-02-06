@@ -10,7 +10,7 @@ bindkey ^[[1;6C next # ctrl + shift + right arrow
 shell -${SHELL}
 
 # because this is so fucking obtuse...
-# %-w:      display previous windows
+# %-w:      display subsequent windows
 # %{+b w}:  bold white
 # [%n]:     display window number in brackets
 # %t:       display title
