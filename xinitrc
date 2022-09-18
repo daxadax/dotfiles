@@ -23,14 +23,22 @@ tee /sys/class/backlight/intel_backlight/brightness <<< 500 &
 # Turn on numlock
 numlockx &
 
+# Start ibus daemon for input switching
+ibus-daemon -drxR &
+
 # Source bashrc
 . ~/.bashrc &
 
-# Start mysql server
-connect_to_mysql &
+# set up monitors on desktop
+HOSTNAME=$(whoami)
+if [ $HOSTNAME == "hagbard" ];
+then
+  xrandr --output DVI-I-1 --rotate right
+  xrandr --output HDMI-0 --auto --right-of DVI-I-1
+fi
 
-# Start screen locker
-xautolock -time 10 -locker "i3lock -c 000000" &
+## start planetary rulers script
+ruby ~/programming/scripts/planetary_rulers.rb &
 
 # Start desktop environment
 exec i3 -c ~/.i3config

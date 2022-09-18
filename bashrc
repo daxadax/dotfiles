@@ -25,17 +25,19 @@ source ~/.aliases/git
 ## curlable webapps
 alias weather_capp='curl wttr.in'
 alias crypto_capp='curl rate.sx'
+alias bvg='ruby ~/programming/scripts/bus_stop_info.rb'
 
 ## system aliases
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias keymap='xmodmap -pke'
+alias lock_display='i3lock -c000000'
+alias ls='ls --color=auto'
 # display active user processes
 alias pp='ps -u $(whoami) -o ucmd,pid,%cpu,%mem'
-alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
-alias keymap="xmodmap -pke"
-alias unmount_all="devmon --unmount-all"
-alias lock_display="i3lock -c000000"
-alias zzz="systemctl suspend"
+alias system_update='sudo pacman -S archlinux-keyring && sudo pacman -Syu'
+alias unmount_all='devmon --unmount-all'
+alias xev='xev | grep -A2 --line-buffered "^KeyRelease" | sed -n "/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p"'
+alias zzz='systemctl suspend'
 
 ## helpers
 alias last_update=get_last_update
@@ -52,9 +54,8 @@ alias connect_to_quotes='cd ~/programming/quotes/quotes_app && shotgun -p 2300 c
 alias connect_to_tarot='cd ~/programming/tarot/tarot_app && shotgun -p 2301 config.ru'
 
 ### shortcuts
-alias block='echo befc523d-8815-4245-be01-81ecd2a8bd99'
 alias feh='feh -.'
-alias r='bundle exec ruby -Ilib:spec:test'
+alias r='bundle exec ruby -r "./spec/spec_helper" -Ilib:spec:test'
 alias rake='bundle exec rake'
 alias remove_exif_data='exiftool -r -overwrite_original -all= *'
 alias telemimi='~/Telegram/Telegram & exit'
@@ -64,6 +65,12 @@ function WIP-get_signal_strength {
   local signal=`iwconfig $WIRELESS_INTERFACE |grep Signal`
   local formatted_signal=$($signal | cut -d'=' -f2 | cut -d'/' -f1)
   echo $formatted_signal 70 | awk '{print $1 / $2}'
+}
+
+function write_planetary_rulers {
+  local rulers=`ruby ~/programming/scripts/planetary_hour.rb`
+
+  echo $rulers > $HOME/i3test
 }
 
 # Get date of last full system update
