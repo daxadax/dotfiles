@@ -3,16 +3,20 @@
 build_from_aur(){
   local tarball=$1
   local file=$(basename $tarball)
-  local base=${file%%.*}
+  local base=$(basename -s .tar.gz $file)
 
+  echo "file"
+  echo $file
+  echo "base"
   echo $base
   set +o verbose
   mkdir -p ~/AUR/$base
   mv $tarball ~/AUR/$base
   cd ~/AUR/$base
   tar -xvf $file
+  echo $pwd
   cd ~/AUR/$base/$base
-  pwd
+  echo $pwd
   echo installing $base
   makepkg -sri
 }
