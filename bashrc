@@ -34,7 +34,7 @@ alias lock_display='i3lock -c000000'
 alias ls='ls --color=auto'
 # display active user processes
 alias pp='ps -u $(whoami) -o ucmd,pid,%cpu,%mem'
-alias system_update='sudo pacman -S archlinux-keyring && sudo pacman -Syu'
+alias system_update='sudo pacman -S archlinux-keyring && sudo pacman -Syu && sudo pacman -Rsunc $(pacman -Qdtq)'
 alias unmount_all='devmon --unmount-all'
 alias xev='xev | grep -A2 --line-buffered "^KeyRelease" | sed -n "/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p"'
 alias zzz='systemctl suspend'
