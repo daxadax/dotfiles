@@ -12,7 +12,7 @@ build_from_aur(){
   set +o verbose
   mkdir -p ~/AUR/$base
   mv $tarball ~/AUR/$base
-  cd ~/AUR/$base
+  cd ~/AUR
   tar -xvf $file
   echo $pwd
   cd ~/AUR/$base/$base

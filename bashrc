@@ -3,6 +3,7 @@
 
 ## export
 export EDITOR=vim
+export VMAIL_BROWSER=w3m
 export WIRELESS_INTERFACE=`iw dev | sed '2q;d' | cut -d' ' -f2`
 export HISTSIZE=100000
 export HISTFILESIZE=100000
@@ -129,6 +130,20 @@ function determine_disk_usage {
 function screenshot_to_clipboard {
   scrot -s -e 'xclip -selection clipboard -t image/png -i $f'
   rm *scrot.png
+}
+
+alias staging_console='devcon "staging"'
+alias prod_console='devcon "prod"'
+
+# dev consoles with aws
+function devcon {
+  if [[ "$1" !=  "" ]]; then
+    aws-vault clear
+    instanceId=$(aws-vault exec $1 -- aws ec2 describe-instances --filters "Name=tag:Name,Values=console-instance" --query 'Reservations[*].Instances[*].[InstanceId]' --output text)
+    aws-vault exec $1 -- aws ssm start-session --target $instanceId
+  else
+    echo "I'm afraid I can't do that, $USER"
+  fi
 }
 
 ## Determine the current git-branch if in a git directory

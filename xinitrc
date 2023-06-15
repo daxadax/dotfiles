@@ -40,5 +40,8 @@ fi
 ## start planetary rulers script
 ruby ~/programming/scripts/planetary_rulers.rb &
 
+# Start screen locker
+xautolock -time 20 -locker "i3lock -c 000000" &
+
 # Start desktop environment
 exec i3 -c ~/.i3config

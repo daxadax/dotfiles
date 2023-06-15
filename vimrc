@@ -14,6 +14,7 @@ colorscheme solarized
 " ctrlp settings
 let g:ctrlp_max_files=0
 set wildignore+=*/node_modules/*
+let g:ctrlp_user_command = ['.git', 'cd %s && find -L ! -path "./bin/*" ! -path "./public/*" ! -path "./vendor/*" ! -path "./.git/*" ! -path "./tmp/*" ! -path "./spec/vcr_cassettes/*"']
 
 "  ### VIM-AIRLINE SETTINGS ###
 "use 'vim-airline' all the time
@@ -64,6 +65,7 @@ autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\s\+$//e
 
 " file extension syntax mapping
 au BufNewFile,BufRead *.thor set filetype=ruby
+au BufNewFile,BufRead work.log set filetype=worklog
 
 " search for visually hightlighted text
 vnoremap <c-f> y<ESC>/<c-r>"<CR>
