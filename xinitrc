@@ -37,11 +37,15 @@ then
   xrandr --output HDMI-0 --auto --right-of DVI-I-1
 fi
 
+if [ $HOSTNAME == "corwin" ];
+then
+  xrandr --output DP-1 --rotate right
+  xrandr --output HMDI-1-2 --auto --right-of DVI-I-1
+fi
+
+
 ## start planetary rulers script
 ruby ~/programming/scripts/planetary_rulers.rb &
-
-# Start screen locker
-xautolock -time 20 -locker "i3lock -c 000000" &
 
 # Start desktop environment
 exec i3 -c ~/.i3config
