@@ -12,6 +12,7 @@ export HISTFILESIZE=100000
 for f in ~/.aliases/*; do source $f; done
 
 ## System specific
+alias rspec="LD_LIBRARY_PATH=$HOME/libs rspec"
 alias wireless_down='sudo ip link set $WIRELESS_INTERFACE down'
 alias wireless_up='sudo ip link set $WIRELESS_INTERFACE up'
 alias cycle_vpn=cycle_vpn_connection
