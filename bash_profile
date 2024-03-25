@@ -1,8 +1,9 @@
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-
 source ~/.profile
 source ~/.bashrc
 source ~/.env
+
+# run startx on login
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
 # https://www.growingwiththeweb.com/2018/01/slow-nvm-init.html
 # Defer initialization of nvm until nvm, node or a node-dependent command is
