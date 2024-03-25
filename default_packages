@@ -7,9 +7,7 @@ feh
 firefox
 gnome-terminal
 i3-wm
-i3lock
 i3status
-mariadb
 numlockx
 openssh
 perl-image-exiftool
@@ -21,10 +19,9 @@ tree
 ttf-baekmuk
 udevil
 udisks2
-xautolock
+which
 xorg-server
 xorg-server-utils
 xorg-xev
 xorg-xinit
 xorg-xmessage
-youtube-dl
