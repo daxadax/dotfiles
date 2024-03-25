@@ -9,3 +9,5 @@ prettylog = log --graph --abbrev-commit --decorate --date=relative --format=form
 	helper = cache --timeout=28800
 [user]
 	name = dax
+[http]
+	postBuffer = 524288000
