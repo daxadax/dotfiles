@@ -42,4 +42,4 @@ fi
 ruby ~/programming/scripts/planetary_rulers.rb &
 
 # Start desktop environment
-exec i3 -c ~/.conf/i3/config
+exec i3 -c ~/.config/i3/config
