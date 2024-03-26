@@ -3,42 +3,29 @@
 
 ## export
 export EDITOR=vim
-export VMAIL_BROWSER=w3m
-export WIRELESS_INTERFACE=`iw dev | sed '2q;d' | cut -d' ' -f2`
+# export WIRELESS_INTERFACE=`iw dev | sed '2q;d' | cut -d' ' -f2`
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 
 ## source all files in the 'aliases' directory
 for f in ~/.aliases/*; do source $f; done
 
-## System specific
-alias rspec="LD_LIBRARY_PATH=$HOME/libs rspec"
-alias wireless_down='sudo ip link set $WIRELESS_INTERFACE down'
-alias wireless_up='sudo ip link set $WIRELESS_INTERFACE up'
-alias cycle_vpn=cycle_vpn_connection
-
-## reminder helpers
-alias clear_reminders='echo "nothing to do" > ~/.reminders'
-alias remind_me=add_reminder
-
 ## git aliases
 source ~/.aliases/git
 
+## dotori shortcuts
+alias export_dotori_menus=`./programming/scripts/export_dotori_menus.sh`
+
 ## curlable webapps
-alias weather_capp='curl wttr.in'
-alias crypto_capp='curl rate.sx'
 alias bvg='ruby ~/programming/scripts/bus_stop_info.rb'
 
 ## system aliases
 alias grep='grep --color=auto'
-alias keymap='xmodmap -pke'
-alias lock_display='i3lock -c000000'
 alias ls='ls --color=auto'
 # display active user processes
 alias pp='ps -u $(whoami) -o ucmd,pid,%cpu,%mem'
 alias system_update='sudo pacman -S archlinux-keyring && sudo pacman -Syu && sudo pacman -Rsunc $(pacman -Qdtq)'
 alias unmount_all='devmon --unmount-all'
-alias xev='xev | grep -A2 --line-buffered "^KeyRelease" | sed -n "/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p"'
 alias zzz='systemctl suspend'
 
 ## helpers
@@ -49,18 +36,12 @@ alias for_files_in=for_files_in
 alias import_photos=import_photos
 alias stc=screenshot_to_clipboard
 
-## connection aliases
-alias connect_to_wifi='sudo wifi-menu'
-alias connect_to_mysql='sudo systemctl start mysqld.service'
-alias connect_to_quotes='cd ~/programming/quotes/quotes_app && shotgun -p 2300 config.ru'
-alias connect_to_tarot='cd ~/programming/tarot/tarot_app && shotgun -p 2301 config.ru'
-
 ### shortcuts
-alias feh='feh -.'
 alias r='bundle exec ruby -r "./spec/spec_helper" -Ilib:spec:test'
+alias rspec="LD_LIBRARY_PATH=$HOME/libs rspec"
 alias rake='bundle exec rake'
-alias remove_exif_data='exiftool -r -overwrite_original -all= *'
-alias telemimi='~/Telegram/Telegram & exit'
+alias telemimi='telegram-desktop & exit'
+alias torrent=open_torrent_client
 
 # Get relative wireless signal strength
 function WIP-get_signal_strength {
@@ -87,22 +68,6 @@ if [ $# -lt 2 ]; then
 fi
 
 for file in $1/*; do $2 $file; done
-}
-
-#Add a reminder to the reminders file, shown at login
-function add_reminder {
-if [[ "$1" != "" ]]; then
-  echo $1 >> ~/.reminders
-else
-  echo "Remind you about what?"  1>&2
-fi
-}
-
-function cycle_vpn_connection {
-  local target="${1:-cz}"
-
-  expressvpn disconnect
-  expressvpn connect $target
 }
 
 # Send a kill -9 signal to PID
@@ -133,17 +98,13 @@ function screenshot_to_clipboard {
   rm *scrot.png
 }
 
-alias staging_console='devcon "staging"'
-alias prod_console='devcon "prod"'
+function open_torrent_client {
+  local status=`mullvad status | sed 's/ .*//'`
 
-# dev consoles with aws
-function devcon {
-  if [[ "$1" !=  "" ]]; then
-    aws-vault clear
-    instanceId=$(aws-vault exec $1 -- aws ec2 describe-instances --filters "Name=tag:Name,Values=console-instance" --query 'Reservations[*].Instances[*].[InstanceId]' --output text)
-    aws-vault exec $1 -- aws ssm start-session --target $instanceId
+  if [[ $status ==  "Connected" ]]; then
+    fragments
   else
-    echo "I'm afraid I can't do that, $USER"
+    echo "You are not connected to a VPN. Please connect and try again."
   fi
 }
 
