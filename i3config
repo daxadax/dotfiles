@@ -10,32 +10,42 @@ set $mod Mod1
 # is used in the bar {} block below. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-### Energy settings ###
-exec xbacklight -set 50
-
-### Default volume ###
-exec amixer sset 'Master' 40%
-
 ### Window placement/styling ###
-exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/chromium'
-exec --no-startup-id i3-msg 'workspace 8; exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/gnome-terminal'
-exec xmessage -file ~/.reminders
+# set workspaces per monitor
+set $primary_monitor "0"
+set $secondary_monitor "1"
+
+workspace 1 output $primary_monitor
+workspace 2 output $primary_monitor
+workspace 3 output $primary_monitor
+workspace 4 output $primary_monitor
+workspace 5 output $primary_monitor
+workspace 6 output $primary_monitor
+workspace 7 output $primary_monitor
+workspace 8 output $primary_monitor
+workspace 9 output $primary_monitor
+workspace 10 output $secondary_monitor
+
+# exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/chromium'
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/gnome-terminal'
+# exec xmessage -file ~/.reminders
 
 # the last window manipulated is the one that is present on startup
 new_window none
-
-# hide the mouse pointer
-exec xdotool mousemove 1500 1200
 
 ##### END STARTUP BLOCK #####
 
 ### USER KEYBINDINGS ###
 
 #volume
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # amixer doesn't toggle headphones
-bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 3%+
-bindsym XF86AudioLowerVolume exec amixer sset 'Master' 3%-
+# NOTE: amixer doesn't toggle headphones
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec amixer -c 2 set Master 3%+
+bindsym XF86AudioLowerVolume exec amixer -c 2 set Master 3%-
+
+# screenshots to clipboard
+bindsym PRINT exec stc
 
 #mic
 bindsym XF86AudioMicMute exec amixer set Capture toggle
@@ -43,9 +53,6 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 #brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-
-#lock screen
-bindsym $mod+Ctrl+Space exec lock_display
 
 ### DEFAULT KEYBINDINGS ###
 
@@ -125,7 +132,7 @@ bindsym $mod+0 workspace 10
 
 # next/previous workspace
 bindsym $mod+Ctrl+semicolon workspace next_on_output
-bindsym $mod+Ctrl+j         workspace prev_on_output
+bindsym $mod+Ctrl+j  workspace prev_on_output
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -148,37 +155,46 @@ bindsym $mod+Shift+e exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+  # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 ##START i3STATUS###
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
-    font pango:Terminus 18px
-    status_command i3status
-    wheel_up_cmd nop
-    wheel_down_cmd nop
+  font pango:Terminus 18px
+  padding 3px
+  tray_output none
+
+  colors {
+    background #002b36
+    statusline #b58900
+    separator #b58900
+
+    focused_workspace #b58900 #b58900 #002b36
+    active_workspace #002b36 #002b36 #b58900
+    inactive_workspace #002b36 #002b36 #93a1a1
+    urgent_workspace #dc322f #dc322f #93a1a1
+  }
+
+  status_command i3blocks -c $HOME/.config/i3/status_config
 }
