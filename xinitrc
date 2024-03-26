@@ -2,8 +2,6 @@
 #
 # ~/.xinitrc
 #
-# Executed by startx (run your window manager from here)
-
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/*; do
     [ -x "$f" ] && . "$f"
@@ -12,13 +10,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 # Start devmon for automounting
-devmon --exec-on-drive "notify-send '%f has been mounted'" --exec-on-unmount "notify-send '%f has been unmounted'" --exec-on-remove "notify-send '%f has been removed'" &
+devmon  --exec-on-drive "notify-send '%f has been mounted'" \
+        --exec-on-unmount "notify-send '%f has been unmounted'" \
+        --exec-on-remove "notify-send '%f has been removed'" &
 
 # Start dunst
 dunst -config ~/.dunstrc &
-
-# Set backlight to 50
-tee /sys/class/backlight/intel_backlight/brightness <<< 500 &
 
 # Turn on numlock
 numlockx &
@@ -35,17 +32,14 @@ if [ $HOSTNAME == "hagbard" ];
 then
   xrandr --output DVI-I-1 --rotate right
   xrandr --output HDMI-0 --auto --right-of DVI-I-1
-fi
-
-if [ $HOSTNAME == "corwin" ];
+elif [ $HOSTNAME == "corwin" ];
 then
   xrandr --output DP-1 --rotate right
-  xrandr --output HMDI-1-2 --auto --right-of DVI-I-1
+  xrandr --auto --output HDMI-1-2 --mode 2560x1440 --primary --right-of DP-1
 fi
-
 
 ## start planetary rulers script
 ruby ~/programming/scripts/planetary_rulers.rb &
 
 # Start desktop environment
-exec i3 -c ~/.i3config
+exec i3 -c ~/.config/i3/config
