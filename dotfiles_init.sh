@@ -27,13 +27,20 @@ for file in $files; do
   ln -s $dir/$file ~/.$file
 done
 
-echo "Done.  Beginning directories"
+echo "Done. Beginning config files"
+cp -r ~/.config/ ~/dotfiles_old/
 
-for folder in $folders; do 
+echo "Creating i3 config"
+mkdir -p ~/.config/i3
+ln -s $dir/i3config ~/.config/i3/config
+
+echo "Done. Beginning directories"
+
+for folder in $folders; do
   cp -r ~/.$folder/ ~/dotfiles_old/
   rm -rf ~/.$folder
   echo "Creating symlink to $folder in home directory"
   ln -s $dir/$folder ~/.$folder
 done
 
-echo "Done.  Backups can be found in $olddir"
+echo "Done. Backups can be found in $olddir"
