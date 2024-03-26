@@ -3,6 +3,9 @@
 cd dotfiles
 ./dotfiles_init.sh
 
+# this is important to bring the system up to date
+system_update
+
 # install all default packages
 for i in $(cat $HOME/.default_packages | xargs -L1); do
   sudo pacman --noconfirm -S $i;
