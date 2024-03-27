@@ -1,11 +1,12 @@
 alsa-utils
-aria2
 bleachbit
 dunst
 evince
 feh
 firefox
 gnome-terminal
+ibus
+ibus-hangul
 i3-wm
 i3status
 numlockx
@@ -18,7 +19,6 @@ screen
 scrot
 tree
 ttf-baekmuk
-udevil
 udisks2
 which
 xorg-server
