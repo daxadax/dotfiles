@@ -48,7 +48,7 @@ alias staging_console='connect_to_console stage'
 # takes one of "stage" or "prod"
 function connect_to_console {
   if pacman -Qi aws-vault > /dev/null ; then
-    InstanceID=$(aws-vault exec stage -- aws ec2 describe-instances --filters "Name=tag:Name,Values=console-instance" --query 'Reservations[*].Instances[*].[InstanceId]' --output text);
+    InstanceID=$(aws-vault exec $1 -- aws ec2 describe-instances --filters "Name=tag:Name,Values=console-instance" --query 'Reservations[*].Instances[*].[InstanceId]' --output text);
 
     aws-vault exec $1 -- aws ssm start-session --target $InstanceID
   else
