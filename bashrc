@@ -13,9 +13,6 @@ for f in ~/.aliases/*; do source $f; done
 ## git aliases
 source ~/.aliases/git
 
-## dotori shortcuts
-# alias export_dotori_menus=`./programming/scripts/export_dotori_menus.sh`
-
 ## curlable webapps
 alias bvg='ruby ~/programming/scripts/bus_stop_info.rb'
 
