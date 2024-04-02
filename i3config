@@ -3,6 +3,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+set $primary_monitor '0'
+set $secondary_monitor '1'
 
 ##### STARTUP BLOCK #####
 
@@ -11,9 +13,6 @@ set $mod Mod1
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 ### Window placement/styling ###
-# set workspaces per monitor
-set $primary_monitor "0"
-set $secondary_monitor "1"
 
 workspace 1 output $primary_monitor
 workspace 2 output $primary_monitor
@@ -181,6 +180,31 @@ bindsym $mod+r mode "resize"
 
 ##START i3STATUS###
 bar {
+  output primary
+  font pango:Terminus 18px
+  padding 3px
+  tray_output none
+  # TODO: lose separator_symbol
+
+  colors {
+    background #002b36
+    statusline #b58900
+    separator #b58900 # gold
+    separator #93a1a1 # grey
+    # separator #268bd2 # blue
+    # separator #2aa198 # cyan
+
+    focused_workspace #b58900 #b58900 #002b36
+    active_workspace #002b36 #002b36 #b58900
+    inactive_workspace #002b36 #002b36 #93a1a1
+    urgent_workspace #dc322f #dc322f #93a1a1
+  }
+
+  status_command i3blocks -c $HOME/.config/i3/status_config
+}
+
+bar {
+  output nonprimary
   font pango:Terminus 18px
   padding 3px
   tray_output none
@@ -195,6 +219,4 @@ bar {
     inactive_workspace #002b36 #002b36 #93a1a1
     urgent_workspace #dc322f #dc322f #93a1a1
   }
-
-  status_command i3blocks -c $HOME/.config/i3/status_config
 }
