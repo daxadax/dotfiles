@@ -40,7 +40,7 @@ alias rake='bundle exec rake'
 alias telemimi='telegram-desktop & exit'
 alias torrent=open_torrent_client
 alias prod_console='connect_to_console prod'
-alias staging_console='connect_to_console stage'
+alias staging_console='connect_to_console staging'
 
 # takes one of "stage" or "prod"
 function connect_to_console {
