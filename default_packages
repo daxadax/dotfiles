@@ -1,9 +1,11 @@
 alsa-utils
+autoconf
 bleachbit
 dunst
 evince
 feh
 firefox
+gcc
 gnome-terminal
 ibus
 ibus-hangul
