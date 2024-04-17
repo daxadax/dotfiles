@@ -6,14 +6,12 @@ BATTERY_POWER=$(cat /sys/class/power_supply/BAT0/capacity)
 
 URGENT_VALUE=10
 
-if [[ "${BATTERY_STATE}" = "Charging" ]]; then
+if [[ "${BATTERY_POWER}" -le "${URGENT_VALUE}" && "${BATTERY_STATE}" = "Discharging" ]]; then
+  echo "<span color='#dc322f'>!! BAT ${BATTERY_POWER}% !!</span>"
+elif [[ "${BATTERY_STATE}" = "Charging" ]]; then
   echo "CHR ${BATTERY_POWER}%"
 elif [[ "${BATTERY_STATE}" = "Discharging" ]]; then
   echo "BAT ${BATTERY_POWER}%"
 else
   echo "${BATTERY_POWER}%"
-fi
-
-if [[ "${BATTERY_POWER}" -le "${URGENT_VALUE}" ]]; then
-  echo "<span color='#dc322f'>!! BAT ${BATTERY_POWER}% !!</span>"
 fi
