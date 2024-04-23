@@ -16,7 +16,7 @@ alias branch_grep=branch_grep
 
 function run_rubocop_if_exists_and_commit {
   if [ "$(type -t rubocop)" = "file" ]; then
-    local target_files=`ruby ~/programming/scripts/collect_files_for_rubocop.rb`
+    local target_files=`ruby ~/programming/scripts/git/collect_files_for_rubocop.rb`
 
     rubocop $target_files && git commit -v $1
   else
