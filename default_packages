@@ -1,4 +1,5 @@
 alsa-utils
+alsactl
 autoconf
 bleachbit
 dunst
@@ -11,6 +12,7 @@ ibus
 ibus-hangul
 i3-wm
 i3status
+keychain
 numlockx
 openssh
 perl-image-exiftool
