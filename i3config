@@ -44,7 +44,7 @@ bindsym XF86AudioRaiseVolume exec amixer -c 2 set Master 3%+
 bindsym XF86AudioLowerVolume exec amixer -c 2 set Master 3%-
 
 # screenshots to clipboard
-bindsym PRINT exec stc
+bindsym --release Print exec scrot -s -F '/tmp/screenshot.png' -e 'xclip -selection clipboard -t image/png -i $f'
 
 #mic
 bindsym XF86AudioMicMute exec amixer set Capture toggle
