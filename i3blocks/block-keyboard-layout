@@ -1,0 +1,16 @@
+#!/bin/bash
+# modified from https://github.com/johnberroa/i3blocks-keyboardlanguage-switcher/blob/master/language-printer
+
+CURR_LANG="$(setxkbmap -print | grep xkb_symbols | awk '{print $4}' | awk -F"+" '{print $2}')"
+EN="us"
+KO="kr(kr104)"
+
+if [ $CURR_LANG == $EN ]
+then
+  echo "EN"
+elif [ $CURR_LANG == $KO ]
+then
+  echo "KO"
+else
+  echo "??"
+fi
