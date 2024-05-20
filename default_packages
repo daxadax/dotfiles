@@ -9,6 +9,7 @@ gcc
 gnome-terminal
 ibus
 ibus-hangul
+i3blocks
 i3-wm
 i3status
 keychain
