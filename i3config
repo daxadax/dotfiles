@@ -46,6 +46,10 @@ bindsym XF86AudioLowerVolume exec amixer -c 2 set Master 3%-
 # screenshots to clipboard
 bindsym --release Print exec scrot -s -F '/tmp/screenshot.png' -e 'xclip -selection clipboard -t image/png -i $f'
 
+# keyboard layout
+# NOTE: hotkey is set via ibus-setup, this is just to send a signal that i3blocks can listen for
+bindsym --release Super_L exec ruby ~/programming/scripts/switch_keyboard_layout.rb
+
 #mic
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 
