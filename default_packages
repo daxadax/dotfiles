@@ -1,5 +1,4 @@
 alsa-utils
-alsactl
 autoconf
 bleachbit
 dunst
@@ -26,7 +25,6 @@ ttf-baekmuk
 udisks2
 which
 xorg-server
-xorg-server-utils
 xorg-xev
 xorg-xinit
 xorg-xmessage
