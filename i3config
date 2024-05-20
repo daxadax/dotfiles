@@ -25,9 +25,9 @@ workspace 8 output $primary_monitor
 workspace 9 output $primary_monitor
 workspace 10 output $secondary_monitor
 
-# exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/chromium'
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/gnome-terminal'
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/gnome-terminal'
+exec --no-startup-id i3-msg 'workspace 8; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/chromium'
 # exec xmessage -file ~/.reminders
 
 # the last window manipulated is the one that is present on startup
@@ -61,11 +61,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 #start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-
-#start dmenu
-bindsym $mod+d exec dmenu_run
-# kill focused window
-bindsym $mod+Shift+q kill
 
 # change focus
 bindsym $mod+j focus left
@@ -105,18 +100,6 @@ bindsym $mod+f fullscreen
 # bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -193,8 +176,9 @@ bar {
   colors {
     background #002b36
     statusline #b58900
-    separator #b58900 # gold
-    separator #93a1a1 # grey
+    separator #93a1a1
+    # separator #93a1a1 # grey
+    # separator #b58900
     # separator #268bd2 # blue
     # separator #2aa198 # cyan
 
