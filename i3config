@@ -3,6 +3,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+set $super Mod4
 set $primary_monitor '0'
 set $secondary_monitor '1'
 
@@ -47,8 +48,7 @@ bindsym XF86AudioLowerVolume exec amixer -c 2 set Master 3%-
 bindsym --release Print exec scrot -s -F '/tmp/screenshot.png' -e 'xclip -selection clipboard -t image/png -i $f'
 
 # keyboard layout
-# NOTE: hotkey is set via ibus-setup, this is just to send a signal that i3blocks can listen for
-bindsym --release Super_L exec ruby ~/programming/scripts/switch_keyboard_layout.rb
+bindsym --release $mod+$super+Ctrl+space exec ruby ~/programming/scripts/switch_keyboard_layout.rb
 
 #mic
 bindsym XF86AudioMicMute exec amixer set Capture toggle
