@@ -1,4 +1,4 @@
-AMIXER=$(amixer -c0 get Master | tail -n 1)
+AMIXER=$(amixer -c $SOUNDCARD_CHANNEL get Master | tail -n 1)
 if [[ $AMIXER =~ "[on]" ]]; then
   IFS=' ' read -ra args <<< "$AMIXER"
 
