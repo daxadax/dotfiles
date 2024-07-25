@@ -30,8 +30,7 @@ ibus-daemon -drxR &
 HOSTNAME=$(whoami)
 if [ $HOSTNAME == "hagbard" ];
 then
-  xrandr --output DVI-I-1 --rotate right
-  xrandr --output HDMI-0 --auto --right-of DVI-I-1
+  xrandr --output HDMI-1 --auto --primary
 elif [ $HOSTNAME == "corwin" ];
 then
   xrandr --output DP-1 --rotate right
