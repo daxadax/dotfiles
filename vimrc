@@ -66,6 +66,7 @@ autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\s\+$//e
 " file extension syntax mapping
 au BufNewFile,BufRead *.thor set filetype=ruby
 au BufNewFile,BufRead work.log set filetype=worklog
+au BufNewFile,BufRead TODO.log set filetype=todo
 au BufNewFile,BufRead *.csv set filetype=csv
 
 " search for visually hightlighted text
