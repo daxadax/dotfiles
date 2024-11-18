@@ -1,13 +1,13 @@
 [global]
   font = Monospace 15
-  format = "%s\n %b"
+  format = "%a\n %s\n %b"
   sort = yes
   indicate_hidden = yes
   origin = bottom-center
   offset = 0x100
   alignment = center
   show_age_threshold = 60
-  timeout = 30
+  timeout = 15
 
   width = 800
 
@@ -41,12 +41,12 @@
   # Otherwise the "#" and following would be interpreted as a comment.
   background = "#002b36"
   foreground = "#b58900"
-  timeout = 1000
+  timeout = 15
 
 [urgency_normal]
   background = "#002b36"
   foreground = "#b58900"
-  timeout = 1500
+  timeout = 15
 
 [urgency_critical]
   background = "#900000"
