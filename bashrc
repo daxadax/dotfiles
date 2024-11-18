@@ -18,6 +18,7 @@ alias bvg='ruby ~/programming/scripts/bus_stop_info.rb'
 
 ## system aliases
 alias grep='grep --color=auto'
+alias feh='feh -d --scale-down'
 alias ls='ls --color=auto'
 # display active user processes
 alias pp='ps -u $(whoami) -o ucmd,pid,%cpu,%mem'
@@ -31,6 +32,7 @@ alias diskusage=determine_disk_usage
 alias murder=murder
 alias for_files_in=for_files_in
 alias import_photos=import_photos
+alias hlogs=tail_heroku_logs
 
 ### shortcuts
 alias r='bundle exec ruby -r "./spec/spec_helper" -Ilib:spec:test'
@@ -99,6 +101,12 @@ function determine_disk_usage {
   fi
 
   sudo du -h --max-depth=1 $DIR | sort -h
+}
+
+# Stream tail of heroku logs to console with default options
+# tail_heroku_logs <appname>
+function tail_heroku_logs {
+  heroku logs --force-colors --tail -a $1
 }
 
 function open_torrent_client {
