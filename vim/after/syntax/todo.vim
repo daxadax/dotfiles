@@ -13,6 +13,11 @@ hi def link meeting Identifier
 syntax region starred start=/^\s*\zs\*/ end=/$/ oneline
 hi def link starred Todo
 
+" define immediate priority tasks
+syntax region priority start=/^\s*\zs\!/ end=/$/ oneline
+hi Priority ctermfg=202 cterm=bold
+hi! link priority Priority
+
 " define research (is this needed?)
 syntax keyword research r
 hi def link research Statement
