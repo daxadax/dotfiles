@@ -28,7 +28,7 @@ workspace 10 output $secondary_monitor
 
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/gnome-terminal'
 exec --no-startup-id i3-msg 'workspace 8; exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/chromium'
+# exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/chromium'
 # exec xmessage -file ~/.reminders
 
 # the last window manipulated is the one that is present on startup
