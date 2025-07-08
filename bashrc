@@ -4,8 +4,12 @@
 ## export
 export EDITOR=vim
 # export WIRELESS_INTERFACE=`iw dev | sed '2q;d' | cut -d' ' -f2`
+
+# bash history
 export HISTSIZE=100000
 export HISTFILESIZE=100000
+export HISTCONTROL=ignoredups
+export HISTIGNORE="cal:gst:exit:vim*:gc:gp:gd:gl:ls*:ga*:gg:gco*:cd*:tree*:irb:telemimi:zzz"
 
 ## source all files in the 'aliases' directory
 for f in ~/.aliases/*; do source $f; done
@@ -38,7 +42,7 @@ alias hlogs=tail_heroku_logs
 alias r='bundle exec ruby -r "./spec/spec_helper" -Ilib:spec:test'
 alias rspec="LD_LIBRARY_PATH=$HOME/libs rspec"
 alias rake='bundle exec rake'
-alias telemimi='telegram-desktop & exit'
+alias telemimi='Telegram & exit'
 alias torrent=open_torrent_client
 alias prod_console='connect_to_console prod'
 alias staging_console='connect_to_console staging'
