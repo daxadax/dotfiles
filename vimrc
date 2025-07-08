@@ -14,7 +14,7 @@ colorscheme solarized
 " ctrlp settings
 let g:ctrlp_max_files=0
 set wildignore+=*/node_modules/*
-let g:ctrlp_user_command = ['.git', 'cd %s && find -L ! -path "./bin/*" ! -path "./public/*" ! -path "./vendor/*" ! -path "./.git/*" ! -path "./tmp/*" ! -path "./spec/vcr_cassettes/*"']
+let g:ctrlp_user_command = ['.git', 'cd %s && find -L ! -path "./bin/*" ! -path "./vendor/*" ! -path "./.git/*" ! -path "./tmp/*" ! -path "./spec/vcr_cassettes/*"']
 
 "  ### VIM-AIRLINE SETTINGS ###
 "use 'vim-airline' all the time
