@@ -44,19 +44,6 @@ alias rspec="LD_LIBRARY_PATH=$HOME/libs rspec"
 alias rake='bundle exec rake'
 alias telemimi='Telegram & exit'
 alias torrent=open_torrent_client
-alias prod_console='connect_to_console prod'
-alias staging_console='connect_to_console staging'
-
-# takes one of "stage" or "prod"
-function connect_to_console {
-  if pacman -Qi aws-vault > /dev/null ; then
-    InstanceID=$(aws-vault exec $1 -- aws ec2 describe-instances --filters "Name=tag:Name,Values=console-instance" --query 'Reservations[*].Instances[*].[InstanceId]' --output text);
-
-    aws-vault exec $1 -- aws ssm start-session --target $InstanceID
-  else
-    echo "AWS console connections are not available on this machine"
-  fi
-}
 
 # Get relative wireless signal strength
 function WIP-get_signal_strength {
