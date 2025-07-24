@@ -9,7 +9,7 @@ export EDITOR=vim
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 export HISTCONTROL=ignoredups
-export HISTIGNORE="cal:gst:exit:vim*:gc:gp:gd:gl:ls*:ga*:gg:gco*:cd*:tree*:irb:telemimi:zzz"
+export HISTIGNORE="cal:gst:exit:vim*:gc:gp:gd:gl:ls:ga*:gg:gco*:cd*:tree*:irb:telemimi:zzz"
 
 ## source all files in the 'aliases' directory
 for f in ~/.aliases/*; do source $f; done
